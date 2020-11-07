@@ -1,0 +1,31 @@
+// body上段ブロックのレイアウトCSS
+.heading {
+  // background-color: #303E4D;
+  // color: white;
+  padding-bottom: 5%;
+  // border-bottom: 1px solid #303E4D;
+}
+.heading__title--ja {
+  margin-top:20px;
+}
+
+.heading__border {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border-top: solid 3px #303E4D;
+}
+.border-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: 0px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #303E4D;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}

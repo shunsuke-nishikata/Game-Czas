@@ -1,0 +1,56 @@
+<main class="row">
+  <div class="body body__signup">
+    <div class="heading">
+      <h1 class="heading__title--en">Sign In</h1>
+      <h3 class="heading__title--ja">ログインページ</h3>
+    </div>
+    <div class="heading__border">
+      <span class="border-title">Game-Czas</span>
+    </div>
+    <div class="content text-center">
+      <div class="content__field">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="content__field--form">
+            <%= f.label :email, class: "content__field--label" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          </div>
+        
+          <div class="content__field--form">
+            <%= f.label :password, class: "content__field--label" %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+          </div>
+        
+          <% if devise_mapping.rememberable? %>
+            <div class="content__field--form">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+        
+          <div class="btn-actions">
+            <%= f.submit "Log in", class: "btn-actions__sign-in-btn form-control" %>
+          </div>
+        <% end %>
+        
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar__logo">
+      
+    </div>
+    <nav>
+      <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
+        <li class="nav-item">
+           Home
+        </li>
+        <li class="nav-item">Message</li>
+        <li class="nav-item">Event</li>
+        <li class="nav-item">Frinds</li>
+        <li class="nav-item">My Page</li>
+        <li class="nav-item">Notification</li>
+        <li class="nav-item">Sign Out</li>
+      </ul>
+    </nav>
+  </div>
+</main>

@@ -1,0 +1,20 @@
+// body中央コンテンツのブロックレイアウトCSS
+.content {
+  padding-top: 10%;
+// 新規登録ページのレイアウト---------------
+  &__field {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  &__field--form {
+    margin-bottom: 20px;
+  }
+// 新規登録ページのレイアウト---------------
+}
+
+// フォームラベルのレイアウト
+.content__field--label {
+  margin-bottom: 15px;
+}

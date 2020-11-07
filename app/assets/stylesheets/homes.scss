@@ -1,0 +1,141 @@
+
+.main-visual{
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+}
+// トップページ中央寄せ
+.container.main-visual__content {
+  text-align: center;
+}
+
+// .main-visual__logo{
+//   margin-top: 50px;
+//   width:300px;
+//   height:300px;
+// }
+
+.main-visual__explanation{
+  margin: 50px 0 50px 0;
+}
+
+.main-visual__button-field {
+  margin-top: 35px;
+}
+
+// 新規登録ボタン
+.main-visual__sign-up {
+  display: inline-block;
+// 赤色
+  background: #ee7b1a;
+  padding: 8px 30px;
+  color: white;
+  border-radius: 10px;
+  margin-right: 100px;
+}
+
+// ログインボタン
+.main-visual__sign-in {
+  display: inline-block;
+// 水色
+  background: #00a0de;
+  padding: 8px 30px;
+  color: white;
+  border-radius: 10px;
+}
+
+// 簡単ログインボタン
+.main-visual--easy {
+    display: inline-block;
+    padding: 8px 30px;
+    color: white;
+// オレンジ色
+    background: #b6007a;
+    border-radius: 10px;
+}
+
+
+.about__heading{
+  margin: 0 auto;
+  text-align: center;
+  height:100px;
+  line-height: 100px;
+  background-color: #636ab5;
+  color:white;
+ }
+ @media (max-width: 767px) {
+  .about__heading{
+    font-size: 30px;
+    }
+}
+ .about__content{
+  text-align: center;
+  padding: 50px 50px;
+  background-color:white-gray;
+ }
+ .about-explanation{
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+ }
+ .about-2way{
+  display: flex;
+  justify-content: space-around;
+ }
+ .about-Nomi-Joy__logo,.about-Kanjino-Heya__logo{
+  width:200px;
+  height:200px;
+  margin-bottom: 30px;
+ }
+ .about-Nomi-Joy__content,.about-Kanjino-Heya__content{
+   padding:3%;
+   margin-bottom:30px;
+   border-radius: 30px;
+   background-color: light-gray;
+ }
+ .top-footer{
+  height:80px;
+  line-height: 80px;
+  background-color:white-gray;
+  background-color:main;
+ }
+ @media (max-width: 767px) {
+  .copyright{
+    margin-top: 15px;
+  }
+  .about__content h4{
+    font-size:16px;
+  }
+ }
+ // 画像（step)
+.step-small-image{
+  width:38px;
+  height:38px;
+}
+.sm-step-small-image{
+  width:30px;
+  height:30px;
+}
+// 画像（説明)
+.descreption-image{
+  width:90%;
+  padding-top:4%;
+}
+.descreption-image{
+  width:90%;
+  padding-top:4%;
+}
+// 見出しのマーカー
+.about__geme-czas{
+  .title {
+    background:linear-gradient(transparent 70%, #a8a8ff 0%);
+    }
+}
+// 見出しのサイズ
+@media (max-width: 767px) {
+  .about-Nomi-Joy__content, .about-Kanjino-Heya{
+    .title {
+      font-size: 0.7em;
+    }
+  }
+}
