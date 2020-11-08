@@ -14,35 +14,52 @@
         <div class="content__fields">
           <h2 class="content__fields--heading">My Profile</h2>
           <div class="content__fields--flex">
-            <div class="content__fields--flex-item-mypage">
-              写真を丸く表示</br>
-              リファイルの画像投稿するボタン
+            <div class="content__fields--flex-item-mypage1">
+               <%= form_with model: @user, url: user_path(current_user), local: :true do |f| %>
+                 <div class="content__field--form-mypage">
+                    <%= f.label "名前", class: "content__field--label-mypage" %><br/>
+                    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+                  </div>
+                  
+                  <div class="content__field--form-mypage">
+                    <%= f.label "性別", class: "content__field--label-mypage" %><br/>
+                    <%= f.radio_button :sex, false, checked: true %>男性 
+                    <%= f.radio_button :sex, true %>女性
+                  </div>
+                
+                  <div class="content__field--form-mypage">
+                    <%= f.label "年齢", class: "content__field--label-mypage" %>
+                    <%= f.number_field :age, class: "age", min: 15, max: 100, class: "form-control" %>
+                  </div>
+                
+                  <div class="content__field--form-mypage">
+                    <%= f.label "よくやるゲーム", class: "content__field--label-mypage" %>
+                    <%= f.text_area :favorite_game, class: "form-control" %>
+                  </div>
+                  <div class="content__field--form-mypage">
+                    <%= f.label "自己紹介", class: "content__field--label-mypage" %>
+                    <%= f.text_area :introduction, class: "form-control" %>
+                  </div>
+                  <div class="content__field--form-mypage">
+                    <%= f.label "My SNS", class: "content__field--label-mypage" %>
+                    <div>
+                      <%= f.label "ツイッターURL", class: "content__field--label-mypage" %>
+                      <%= f.text_field :twitter, class: "form-control" %>
+                      <%= f.label "インスタグラムURL", class: "content__field--label-mypage" %>
+                      <%= f.text_field :instagram, class: "form-control" %>
+                      <%= f.label "ユーチューブURL", class: "content__field--label-mypage" %>
+                      <%= f.text_field :youtube, class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="content__field--button">
+                    <%= f.submit "更新する", class: "mypage-button btn btn-success"%>
+                  </div>
+                <% end %>
             </div>
-            <div class="content__fields--flex-item-mypage">
-              <table>
-                <tr>
-                  <th>名前</th><td>Sui</td>
-                </tr>
-                <tr>
-                  <th>性別</th><td>男</td>
-                </tr>
-                <tr>
-                  <th>年齢</th><td>20歳</td>
-                </tr>
-                <tr>
-                  <th>よくやるゲーム</th><td>hoge,hoge,hoge</td>
-                </tr>
-                <tr>
-                  <th>自己紹介</th><td>hoge,hoge,hoge</td>
-                </tr>
-                <tr>
-                  <th>SNSリンク</th><td>Twitter、Instagram、You Tube</td>
-                </tr>
-              </table>
+            <div class="content__fields--flex-item-mypage2">
+             <p>しゃしんを丸くしたやつ</p>
+             <p>リファイルの画像挿入ボタン</p>
             </div>
-          </div>
-          <div class="content__field--button">
-            <%= link_to "更新する", edit_user_path(current_user), class: "mypage-button"%>
           </div>
         </div>
       </div>

@@ -14,34 +14,48 @@
         <div class="content__fields">
           <h2 class="content__fields--heading">My Profile</h2>
           <div class="content__fields--flex">
-            <div class="content__fields--flex-item-mypage">
-              写真を丸く表示
-            </div>
-            <div class="content__fields--flex-item-mypage">
-              <table>
+            <div class="content__fields--flex-item-mypage1">
+              <table class="table">
                 <tr>
-                  <th>名前</th><td>Sui</td>
+                  <th class="content__profile">名前</th>
+                  <td><%= @user.name %></td>
                 </tr>
                 <tr>
-                  <th>性別</th><td>男</td>
+                  <th class="content__profile">性別</th>
+                  <% if @user.sex == true %>
+                    <td>女性</td>
+                  <% else %>
+                    <td>男性</td>
+                  <% end %>
                 </tr>
                 <tr>
-                  <th>年齢</th><td>20歳</td>
+                  <th class="content__profile">年齢</th>
+                  <td><%= @user.age %></td>
                 </tr>
                 <tr>
-                  <th>よくやるゲーム</th><td>hoge,hoge,hoge</td>
+                  <th class="content__profile">よくやるゲーム</th>
+                  <td><%= @user.favorite_game %></td>
                 </tr>
                 <tr>
-                  <th>自己紹介</th><td>hoge,hoge,hoge</td>
+                  <th class="content__profile">自己紹介</th>
+                  <td><%= @user.introduction %></td>
                 </tr>
                 <tr>
-                  <th>SNSリンク</th><td>Twitter、Instagram、You Tube</td>
+                  <th class="content__profile">SNSリンク</th>
+                  <td>
+                    <%= @user.twitter %></br>
+                    <%= @user.instagram %></br>
+                    <%= @user.youtube %>
+                  </td>
                 </tr>
               </table>
+              <div class="content__field--button">
+                <%= link_to "編集", edit_user_path(current_user), class: "mypage-button btn btn-info"%>
+              </div>
             </div>
-          </div>
-          <div class="content__field--button">
-            <%= link_to "編集", edit_user_path(current_user), class: "mypage-button"%>
+            <div class="content__fields--flex-item-mypage2">
+              写真を丸く表示
+            </div>
           </div>
         </div>
       </div>
