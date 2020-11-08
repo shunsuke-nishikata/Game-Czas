@@ -18,3 +18,39 @@
 .content__field--label {
   margin-bottom: 15px;
 }
+
+// newイベントページのCSS------------------------
+
+.content__field--new-events {
+    background-color: #303E4D;
+    border-radius: 20px;
+    padding: 5%;
+    margin-bottom: 10%;
+}
+
+.content__field--heading {
+  color:white;
+}
+
+.content__field--flex {
+    display: flex;
+    justify-content: space-around;
+    margin-top:30px;
+}
+
+.content__field--flex-item {
+    height: 250px;
+    width: 25%;
+    background: white;
+    margin-right: 20px;
+    color:black;
+}
+// ------------------------------------------------
+
+// 今日のイベントページ------------------------
+.content__field--today {
+  background-color: #303E4D;
+    border-radius: 20px;
+    padding: 5%;
+    margin-bottom: 10%;
+}
