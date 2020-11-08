@@ -3299,3 +3299,689 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 126.3.19.179 at 2020-11-07 11:45:42 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 381ms (Views: 374.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 126.3.19.179 at 2020-11-07 11:45:44 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 126.3.19.179 at 2020-11-07 11:45:48 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (207.4ms)
+Completed 200 OK in 258ms (Views: 236.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for 126.3.19.179 at 2020-11-07 11:45:54 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 126.3.19.179 at 2020-11-07 12:21:48 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (119.4ms)
+Completed 200 OK in 3086ms (Views: 3062.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for 126.3.19.179 at 2020-11-07 12:21:51 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 126.3.19.179 at 2020-11-07 12:28:23 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xQItEXlUBWi6VrBNuwmIHQgyRiXd16p58v8WW0JdAQu8ivejOzLH+O/DiX0CyjYJWE2CQA1VJWzW509tZHPXOA==", "user"=>{"name"=>"Sui", "email"=>"sui@exmple.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sui@exmple.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "sui@exmple.com"], ["encrypted_password", "$2a$12$xZoEq6zStuntXX9GVB/3ueoEtB8VqkV5lAfsEwyQ8hHLOx3czOR/u"], ["name", "Sui"], ["created_at", "2020-11-07 12:28:23.626966"], ["updated_at", "2020-11-07 12:28:23.626966"]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/events
+Completed 302 Found in 355ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 12:28:23 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 84ms (Views: 77.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 12:43:51 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1363ms (Views: 1360.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 12:45:51 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 12:48:14 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 12:48:18 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 12:48:48 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 12:55:19 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:03:10 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:06:22 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:07:40 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 56ms (Views: 53.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:08:36 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:09:05 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:12:12 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:13:51 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2073ms (Views: 2070.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:15:34 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1780ms (Views: 1778.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:16:34 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1829ms (Views: 1827.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:28:08 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:30:05 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:30:21 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1802ms (Views: 1800.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:32:08 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1825ms (Views: 1822.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:32:23 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1729ms (Views: 1726.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:32:41 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1756ms (Views: 1754.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:32:55 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:35:01 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:37:46 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1751ms (Views: 1749.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:38:18 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:38:55 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:43:03 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1764ms (Views: 1761.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:44:18 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1757ms (Views: 1755.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:46:29 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1772ms (Views: 1770.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:48:24 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1753ms (Views: 1751.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:49:10 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1790ms (Views: 1788.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:50:34 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 13:51:36 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:00:21 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:00:25 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:00:27 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57ms (Views: 54.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:00:29 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:04:16 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/Game-Czas/app/views/events/index.html.erb:65: syntax error, unexpected tLABEL, expecting do or '{' or '('
+...k_to "Home", events_path class: "nav-item" );@output_buffer....
+...                         ^~~~~~):
+  
+app/views/events/index.html.erb:65: syntax error, unexpected tLABEL, expecting do or '{' or '('
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:04:31 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:04:36 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 126.3.19.179 at 2020-11-07 14:04:41 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XO55pXc+vPMxP6vJUIuzMrlSic35APRgKem/vFSOSLAlZqMXNVh+Y2SqkvnpSA0m6S1NqCmCe3UN8eaKcqCegw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 126.3.19.179 at 2020-11-07 14:04:41 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 126.3.19.179 at 2020-11-07 14:04:57 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 59ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 126.3.19.179 at 2020-11-07 14:05:14 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RT1qUBxKIuP+mISeljxUcfFGX/+pBZVPOuXNYr5EeDZHAY7ZSflnF8vn65IHHzpm3/WEcY+B9+Um0Lg3tUS8wQ==", "user"=>{"email"=>"sui@exmple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sui@exmple.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/events
+Completed 302 Found in 292ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:05:15 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:09:06 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 126.3.19.179 at 2020-11-07 14:09:16 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IZIhlt6b2Xlyh31y7zADRYOO4dRaTEysLLBWqlGTuOp20BeRmZMiYvGHRlC86QJxR8T9ttRDLYO7WaCZ8zKaZg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 126.3.19.179 at 2020-11-07 14:09:16 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 126.3.19.179 at 2020-11-07 14:13:03 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 126.3.19.179 at 2020-11-07 14:16:11 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 126.3.19.179 at 2020-11-07 14:16:27 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IE4PQ4tvpdLrlNDxSyBdNaL9n8/8V3w48mX9Bl9l+KPlb9RA6UzNoAlkW2ROsKynl2WMpgRhIqU85z6kDQe0mQ==", "user"=>{"email"=>"sui@exmple.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sui@exmple.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/events
+Completed 302 Found in 287ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:16:27 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 126.3.19.179 at 2020-11-07 14:17:22 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/events
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for 126.3.19.179 at 2020-11-07 14:17:35 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/events
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:17:36 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for 126.3.19.179 at 2020-11-07 14:17:40 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/events
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/events" for 126.3.19.179 at 2020-11-07 14:17:41 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/sign_out" for 126.3.19.179 at 2020-11-07 14:17:42 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bYnHdlVfSy/MczkZhFSNqAM+xiPZC5/5RFeG3UmbP2qkX9iFpHG8+g81OYeUQ2aDZ2ZifkHAX39OfbgNGU7WpQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://50e5e434a0b74208b12631b1a175af31.vfs.cloud9.us-east-1.amazonaws.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 126.3.19.179 at 2020-11-07 14:17:42 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 126.3.19.179 at 2020-11-07 14:17:44 +0000
+Cannot render console from 126.3.19.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+

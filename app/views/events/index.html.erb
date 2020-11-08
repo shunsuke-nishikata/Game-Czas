@@ -1,0 +1,88 @@
+<main class="row">
+  <div class="body body__events">
+    <div class="heading">
+      <h1 class="heading__title--en">Sign In</h1>
+      <h3 class="heading__title--main">Game-Czas ++</h3>
+    </div>
+    <div class="heading__border">
+      <span class="border-title">Event-index</span>
+    </div>
+    <div class="content">
+      <div class="content__field-events">
+        <div class="content__field--new-events">
+          <h2 class="content__field--heading">New Events</h2>
+          <div class="content__field--flex">
+            <div class="content__field--flex-item">
+              hoge
+            </div>
+            <div class="content__field--flex-item">
+              hoge
+            </div>
+            <div class="content__field--flex-item">
+              hoge
+            </div>
+            <div class="content__field--flex-item">
+              hoge
+            </div>
+          </div>
+          <div class="content__field--flex">
+            <div class="content__field--flex-item">
+              hoge
+            </div>
+            <div class="content__field--flex-item">
+              hoge
+            </div>
+            <div class="content__field--flex-item">
+              hoge
+            </div>
+            <div class="content__field--flex-item">
+              hoge
+            </div>
+          </div>
+          <P>ページネーション</P>
+        </div>
+        
+        <div class="content__field--today">
+          <h2 class="content__field--heading">Today's game event</h2>
+        </div>
+       
+        <div class="content__field--calender">
+          
+        </div>
+       
+       
+       
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar__logo">
+      
+    </div>
+    <nav>
+      <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
+        <li class="nav-item">
+           <%= link_to "Home", events_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          Message
+        </li>
+        <li class="nav-item">
+          <%= link_to "Event Create", new_event_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Friend", users_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Page", user_path(current_user), class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Notification(通知)", notifications_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</main>

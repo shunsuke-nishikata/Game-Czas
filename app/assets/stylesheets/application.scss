@@ -26,12 +26,12 @@ header {
     border-bottom: 1px solid white;
 }
 
-.sign-up-btn {
-    background: #303E4D;
-    color: white;
-    width: 250px;
-    margin-top:50px;
-    margin-bottom:20px;
-    padding:8px;
-    border-radius:15px;
+.heading__title--main {
+    font-family: Heroes,Proxima Nova,Helvetica,Roboto,sans-serif;
+    font-size: 5.5rem;
+    padding: 2rem 0 4rem;
+    line-height: 1.35;
+    opacity: 1;
+    text-align: center;
+    text-shadow: 0 0 40px hsla(0,0%,99.6%,.75);
 }
