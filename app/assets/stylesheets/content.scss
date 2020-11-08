@@ -54,15 +54,29 @@
 
 
 // マイページ、編集ページのレイアウトCSS
-.content__fields--flex-item-mypage {
-    height: 250px;
-    width: 50%;
+.content__fields--flex-item-mypage1 {
+    width: 70%;
     background: white;
     // margin-right: 20px;
     color:black;
+    padding: 5%;
+}
+
+.content__fields--flex-item-mypage2 {
+    width: 30%;
+    background: white;
+    // margin-right: 20px;
+    color:black;
+    padding: 5%;
+}
+
+// マイページのテーブルレイアウト
+th.content__profile {
+    width: 150px;
 }
 
 
+// フレンドページのレイアウトCSS
 .content__fields--friends {
     background: white;
     width: 100%;
