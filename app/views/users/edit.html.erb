@@ -1,0 +1,81 @@
+<main class="row">
+  <div class="body body__mypage--edit">
+    <div class="heading">
+<!--自分の詳細ページか他のユーザーの詳細ページかで表示を変える-->
+      <h1 class="heading__title--en">プロフィール編集ページ</h1>
+      <h3 class="heading__title--main">Profile ++</h3>
+      
+    </div>
+    <div class="heading__border">
+      <span class="border-title">プロフィールを編集しよう！</span>
+    </div>
+    <div class="content">
+      <div class="content__field--edit-mypage">
+        <div class="content__fields">
+          <h2 class="content__fields--heading">My Profile</h2>
+          <div class="content__fields--flex">
+            <div class="content__fields--flex-item-mypage">
+              写真を丸く表示</br>
+              リファイルの画像投稿するボタン
+            </div>
+            <div class="content__fields--flex-item-mypage">
+              <table>
+                <tr>
+                  <th>名前</th><td>Sui</td>
+                </tr>
+                <tr>
+                  <th>性別</th><td>男</td>
+                </tr>
+                <tr>
+                  <th>年齢</th><td>20歳</td>
+                </tr>
+                <tr>
+                  <th>よくやるゲーム</th><td>hoge,hoge,hoge</td>
+                </tr>
+                <tr>
+                  <th>自己紹介</th><td>hoge,hoge,hoge</td>
+                </tr>
+                <tr>
+                  <th>SNSリンク</th><td>Twitter、Instagram、You Tube</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="content__field--button">
+            <%= link_to "更新する", edit_user_path(current_user), class: "mypage-button"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar__logo">
+      
+    </div>
+    <nav>
+      <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
+        <li class="nav-item">
+           <%= link_to "Home", events_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          Message
+        </li>
+        <li class="nav-item">
+          <%= link_to "Event Create", new_event_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Friend", users_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Page", user_path(current_user), class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Notification(通知)", notifications_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</main>
