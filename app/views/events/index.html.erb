@@ -1,8 +1,8 @@
 <main class="row">
   <div class="body body__events">
     <div class="heading">
-      <h1 class="heading__title--en">Sign In</h1>
-      <h3 class="heading__title--main">Game-Czas ++</h3>
+      <h1 class="heading__title--main">Game-Czas ++</h1>
+      <h3 class="heading__title--ja">Sign In</h3>
     </div>
     <div class="heading__border">
       <span class="border-title">Event-index</span>
@@ -48,18 +48,40 @@
             
           </div>
           <div class="content__fields--flex">
-            <div class="content__fields--flex-item-event">
-              hoge
+            
+            <div class="card content__fields--flex-item-event" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
-            <div class="content__fields--flex-item-event">
-              hoge
+            <div class="card content__fields--flex-item-event" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
-            <div class="content__fields--flex-item-event">
-              hoge
+            <div class="card content__fields--flex-item-event" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
-            <div class="content__fields--flex-item-event">
-              hoge
+            <div class="card content__fields--flex-item-event" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
+            
           </div>
           <P>ページネーション</P>
         </div>
@@ -70,9 +92,12 @@
        
         <div class="content__fields">
           <h2 class="content__fields--heading">My Calendar</h2>
+          <div class="content__fields--calendar">
+            <%= month_calendar do |date| %>
+              <%= date.day %>
+            <% end %>
+          </div>
         </div>
-       
-       
        
       </div>
     </div>
