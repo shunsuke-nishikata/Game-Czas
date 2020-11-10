@@ -54,7 +54,17 @@
               </div>
             </div>
             <div class="content__fields--flex-item-mypage2">
-              写真を丸く表示
+              <div class="content__image--user">
+                <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
+              </div>
+              <!--<table class="table table-bordered ">-->
+              <!--  <tr>-->
+              <!--    <th class="content__profile">自己紹介</th>-->
+              <!--  </tr>-->
+              <!--  <tr>-->
+              <!--    <td><%#= @user.introduction %></td>-->
+              <!--  </tr>-->
+              <!--</table>-->
             </div>
           </div>
         </div>

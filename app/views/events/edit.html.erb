@@ -1,19 +1,19 @@
 <main class="row">
   <div class="body body__mypage--edit">
     <div class="heading">
-      <h3 class="heading__title--main">Events ++</h3>
-      <h3 class="heading__title--ja">イベント作成ページ</h3>
+      <h3 class="heading__title--main">Event Edit ++</h3>
+      <h3 class="heading__title--ja">イベント編集ページ</h3>
       
     </div>
     <div class="heading__border">
-      <span class="border-title">ゲームイベントを作成しよう！</span>
+      <span class="border-title">ゲームイベントを編集しよう！</span>
     </div>
     <div class="content">
       <div class="content__field--event">
         <div class="content__fields">
           <h2 class="content__fields--heading">My events</h2>
           <div class="event__area">
-            <%= form_with model: @event, url: events_path, local: true do |f| %>
+            <%= form_with model: @event, url: event_path(@event), local: true do |f| %>
               <table class="table table-borderless ">
                 <tbody>
                   <tr>
@@ -47,7 +47,7 @@
                 </tbody>
               </table>
               <div class="actions"> 
-                <%= f.submit "イベント作成", class: "btn btn-success" %>
+                <%= f.submit "イベント更新", class: "btn btn-success" %>
               </div> 
             <% end %>
           </div>

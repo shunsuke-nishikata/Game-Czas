@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <header></header>
+    <%if user_signed_in? %>
+      <header></header>
+    <% end %>
     <%= yield %>
     <footer></footer>
   </body>

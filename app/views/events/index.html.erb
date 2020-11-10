@@ -2,88 +2,52 @@
   <div class="body body__events">
     <div class="heading">
       <h1 class="heading__title--main">Game-Czas ++</h1>
-      <h3 class="heading__title--ja">Sign In</h3>
+      <h3 class="heading__title--ja">ゲームイベントに参加しよう！</h3>
     </div>
     <div class="heading__border">
-      <span class="border-title">Event-index</span>
+      <span class="border-title">Welcome to Game-Czas</span>
     </div>
     <div class="content">
       <div class="content__field-events">
-        <div class="content__fields">
-          <h2 class="content__fields--heading">New Events</h2>
+        <div class="content__fields--event-index">
+          <h2 class="content__fields--heading-index">New Events</h2>
           <div class="content__fields--flex">
-            
-            <div class="card content__fields--flex-item-event" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+            <% @events.each do |event| %>
+              <div class="card content__fields--flex-item-event" style="width: 18rem;">
+                <!--<img src="..." class="card-img-top" alt="...">-->
+                <%= link_to user_path(event.user) do %>
+                  <%= attachment_image_tag event.user, :image, format: 'jpeg' , size: "80x80"%>
+                <% end %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= event.event_name %></h5>
+                  <p class="card-text">
+                    <%= event.event_data %></br>
+                    <%= event.starting_time %>
+                    <span>~</span>
+                    <%= event.ending_time %></br>
+                  </p>
+                  <% if event.user != current_user %>
+                    <%= link_to "イベント詳細", event_path(event.id), class: "btn btn-success" %>
+                  <% else %>
+                    <%= link_to "イベント詳細", event_path(event.id), class: "btn btn-info" %>
+                  <% end %>
+                </div>
               </div>
-            </div>
-            <div class="card content__fields--flex-item-event" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            <div class="card content__fields--flex-item-event" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            <div class="card content__fields--flex-item-event" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            
+            <% end %>
           </div>
-          <div class="content__fields--flex">
-            
-            <div class="card content__fields--flex-item-event" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            <div class="card content__fields--flex-item-event" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            <div class="card content__fields--flex-item-event" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            <div class="card content__fields--flex-item-event" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            
+          <div class="content__field-events--page">
+            <P>ページネーション</P>
           </div>
-          <P>ページネーション</P>
+          <!--<div class="content__fields--flex">-->
+          <!--  <div class="card content__fields--flex-item-event" style="width: 18rem;">-->
+          <!--    <img src="..." class="card-img-top" alt="...">-->
+          <!--    <div class="card-body">-->
+          <!--      <h5 class="card-title">Card title</h5>-->
+          <!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+          <!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+          <!--    </div>-->
+          <!--  </div>-->
+          <!--</div>-->
         </div>
         
         <div class="content__fields">

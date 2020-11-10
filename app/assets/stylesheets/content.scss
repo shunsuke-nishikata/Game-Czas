@@ -21,7 +21,7 @@
 
 // 全ページ共通コンテンツレイアウトCSSーーーーーーーーーーー
 .content__fields {
-    background-color: #303E4D;
+    background: #45668a ;
     border-radius: 20px;
     padding: 5%;
     margin-bottom: 10%;
@@ -34,20 +34,37 @@
 
 .content__fields--flex {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top:30px;
 }
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
-// イベントページのレイアウトCSS------------------------
+// イベントページindexレイアウトCSS------------------------
+.content__fields--event-index {
+  background-color: #45668a;
+  border-radius: 20px;
+  padding: 2%;
+  margin-bottom: 10%;
+}
+
+.content__fields--heading-index {
+  margin-top:20px;
+  color:white;
+}
+
 .content__fields--flex-item-event {
-    height: 250px;
-    width: 25%;
     background: white;
-    margin-right: 20px;
+    margin-top: 25px;
     color:black;
 }
+// イベントページnewレイアウトCSS------------------------
+.content__fields--events {
+    background: white;
+    padding: 5%;
+}
+
 // ------------------------------------------------
 
 
@@ -68,7 +85,7 @@
     background: white;
     // margin-right: 20px;
     color:black;
-    padding: 5%;
+    // padding: 5%;
 }
 
 // マイページのテーブルレイアウト
@@ -81,5 +98,15 @@ th.content__profile {
 .content__fields--friends {
     background: white;
     width: 100%;
+}
+
+
+// ユーザーの写真領域のCSS
+.content__image--user {
+    margin-top: 50px;
+}
+// 写真投稿ボタンのCSS
+.content__image--form {
+    margin-top: 50px;
 }
 
