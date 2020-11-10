@@ -76,6 +76,7 @@ gem "refile-mini_magick"
 
 # ページネーション
 gem 'kaminari', '~> 1.2.1'
+
 # デバッグ
 gem 'pry-byebug'
 # カレンダー
@@ -84,3 +85,7 @@ gem 'simple_calendar', '~> 2.0'
 gem 'rails-i18n', '~> 5.1'
 # 静的解析ツール
 # gem 'rubocop-airbnb'
+
+# https://pikawaka.com/rails/font_awesome_sass
+# font_awesome_sass導入
+gem 'font-awesome-sass'

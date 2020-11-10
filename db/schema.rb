@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_064419) do
+ActiveRecord::Schema.define(version: 2020_11_10_065843) do
+
+  create_table "event_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -22,6 +30,13 @@ ActiveRecord::Schema.define(version: 2020_11_09_064419) do
     t.string "game_location"
     t.integer "place"
     t.boolean "is_request", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
