@@ -1,0 +1,43 @@
+.pagination {
+  justify-content: center;
+  margin-top:35px;
+}
+
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.pagination>.active>a {     
+  background: #8fbc8f;     /*背景の色を変える*/
+  border-radius: 50%;    /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>.active>a:hover {     
+  background: #2e8b57;    
+  border-radius: 50%;  
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover { 
+  background: #2e8b57;
+  border-radius: 50%;
+  color:white;
+}
+
+.page-item.active .page-link {
+    border-radius: 50%!important;
+    color: #fff;
+    background: #8fbc8f!important;
+}
+
+.page-item:last-child .page-link {
+    border-radius: 50%!important;
+}
+
+.page-item:first-child .page-link {
+  border-radius: 50%!important;
+}

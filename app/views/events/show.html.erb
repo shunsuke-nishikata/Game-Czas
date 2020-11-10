@@ -45,41 +45,72 @@
                 </tr>
               </tbody>
             </table>
-            <%= link_to "編集", edit_event_path(@event), class: "mypage-button btn btn-info"%>
-            <%= link_to "削除", event_path(@event), method: :delete, class: "mypage-button btn btn-danger"%>
+            <div class="event__area--buttons">
+              <%= link_to "編集", edit_event_path(@event), class: "mypage-button btn btn-info "%>
+              <%= link_to "削除", event_path(@event), method: :delete, class: "mypage-button btn btn-danger"%>
+            </div>
+            <div class="heading__border">
+              <span class="border-title">コメントはこちらから！</span>
+            </div>
+<!--コメント表示領域-->
+            <% @event.event_comments.each do |event_comment| %>
+              <li class="comment">
+                <div class="comment-body bb">
+                  <div class="comment-avatar">
+                    <div class="avatar">
+                      <%#= image_tag('sample-author1.jpg', style: "width: 60px; height: 60px;") %>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                    <div class="comment-author clearfix">
+                      <a href="#" class="link-author"><%= event_comment.user.name %></a>
+                      <span class="comment-meta">
+                        <span class="comment-date"><%= event_comment.created_at.strftime('%Y/%m/%d') %></span>
+                      </span>
+                    </div>
+                    <div class="comment-entry"><%= event_comment.comment %></div>
+                    <% if event_comment.user == current_user %>
+                      <div>
+                        <%= link_to "削除", event_event_comment_path(event_comment.event, event_comment), method: :delete, class: "btn btn-danger pull-right" %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+            <% if @event.likes_by?(current_user) %>
+            
+                <%= link_to event_like_path(@event), method: :delete do %>
+                  <i class="fas fa-heart" style="color: red;"></i>
+                <% end %>
+                <%= @event.likes.count %> いいね
+              
+              <% else %>
+              
+                <%= link_to event_likes_path(@event), method: :post do %>
+                  <i class="far fa-heart" style="color: black;"></i>
+                <% end %>
+                <%= @event.likes.count %> いいね
+              
+            <% end %>
+            <i class="far fa-comments" style="color: black;"></i>
+            <%= @event.event_comments.count %>コメント
+            <div class="float-wrapper">
+              <h2 class="comment-count"><%#= @event.event_comments.count %>件コメント</h2>
+            </div>
+<!--コメントフォーム領域-->
+            <%= form_with(model:[@event, @event_comment],url:  event_event_comments_path(@event), local: true) do |f| %>
+              <div class="row">
+                <div class="col-sm-12">
+                  <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+                </div>
+              </div>
+              <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+            <% end %>
         </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="sidebar">
-    <div class="sidebar__logo">
-      
-    </div>
-    <nav>
-      <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
-        <li class="nav-item">
-           <%= link_to "Home", events_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          Message
-        </li>
-        <li class="nav-item">
-          <%= link_to "Event Create", new_event_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Friend", users_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My Page", user_path(current_user), class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Notification(通知)", notifications_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-item" %>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <%= render 'layouts/sidebar' %>
 </main>

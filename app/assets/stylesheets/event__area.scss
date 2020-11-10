@@ -1,8 +1,24 @@
+// .event__area {
+//     background: white;
+//     padding: 5%;
+// }
+
+// .event__area--supplement {
+//   margin-bottom :10px;
+// } 
+
+// .event__area--buttons {
+//     text-align: right;
+// }
 .event__area {
     background: white;
     padding: 5%;
+    
+    &--supplement {
+      margin-bottom :10px;
+  } 
+    &--buttons {
+      text-align: right;
+  }
 }
 
-.event__area--supplement {
-  margin-bottom :10px;
-} 

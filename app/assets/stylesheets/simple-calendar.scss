@@ -1,6 +1,6 @@
 .simple-calendar {
   .day {
-    height:150px;
+    height:150px!important;
   }
   .wday-0 {
     color:#b14a4a;
@@ -23,11 +23,12 @@
   }
   .wday-6 {
     color:#526ebd;
-    background-color: #efffff;
+    background-color: #f0ffff;
   }
 
   .today {
-    // background-color: white;
+    background: #f7f7f7!important;
+    border: solid #45668a!important;
   }
   .past {}
   .future {}
@@ -62,27 +63,25 @@
 //   }
 // }
 a.next{
-  color: #7f7fff;
+  color: #8fbc8f;
   margin: 0 30px;
   font-size: 30px;
   &:hover{
     text-decoration: none;
+    color:#2e8b57;
   }
 }
 a.previous{
-  color: #7f7fff;
+  color: #8fbc8f;
   margin: 0 30px;
   font-size: 30px;
   &:hover{
     text-decoration: none;
+    color:#2e8b57;
   }
 }
 
-.simple-calendar .today {
-    background-color: #ffefe0;
-}
-
 th.days-ja {
-    text-align: center;
+    text-align: center!important;
 }
 

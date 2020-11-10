@@ -2,8 +2,8 @@
   <div class="body body__mypage--edit">
     <div class="heading">
 <!--自分の詳細ページか他のユーザーの詳細ページかで表示を変える-->
-      <h1 class="heading__title--en">プロフィール編集ページ</h1>
       <h3 class="heading__title--main">Profile ++</h3>
+      <h3 class="heading__title--ja">プロフィール編集ページ</h3>
       
     </div>
     <div class="heading__border">
@@ -69,34 +69,5 @@
       </div>
     </div>
   </div>
-  <div class="sidebar">
-    <div class="sidebar__logo">
-      
-    </div>
-    <nav>
-      <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
-        <li class="nav-item">
-           <%= link_to "Home", events_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          Message
-        </li>
-        <li class="nav-item">
-          <%= link_to "Event Create", new_event_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Friend", users_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My Page", user_path(current_user), class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Notification(通知)", notifications_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-item" %>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <%= render 'layouts/sidebar' %>
 </main>

@@ -15,14 +15,18 @@
  */
  
 @import "bootstrap";   
-@import "simple_calendar";   
+@import "simple_calendar";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
-a:hover {
-  text-decoration:none;
-  color:white;
-  opacity: 0.7;
-}
+// a:hover {
+//   text-decoration:none;
+//   color:white;
+//   opacity: 0.7;
+// }
 
 img.attachment.user.image {
     border-radius: 50%;
 }
+
+

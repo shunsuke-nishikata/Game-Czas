@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'homes#top'
-  resources :events
   resources :users, only: [:index, :show, :edit, :update]
+  resources :events do
+    resources :event_comments, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy]
+  end
   resources :notifications, only: [:index]
 end
