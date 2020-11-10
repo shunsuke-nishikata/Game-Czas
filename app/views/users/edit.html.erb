@@ -15,7 +15,7 @@
           <h2 class="content__fields--heading">My Profile</h2>
           <div class="content__fields--flex">
             <div class="content__fields--flex-item-mypage1">
-               <%= form_with model: @user, url: user_path(current_user), local: :true do |f| %>
+              <%= form_with model: @user, url: user_path(current_user), local: :true do |f| %>
                  <div class="content__field--form-mypage">
                     <%= f.label "名前", class: "content__field--label-mypage" %><br/>
                     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
@@ -54,12 +54,16 @@
                   <div class="content__field--button">
                     <%= f.submit "更新する", class: "mypage-button btn btn-success"%>
                   </div>
-                <% end %>
-            </div>
-            <div class="content__fields--flex-item-mypage2">
-             <p>しゃしんを丸くしたやつ</p>
-             <p>リファイルの画像挿入ボタン</p>
-            </div>
+                </div>
+                <div class="content__fields--flex-item-mypage2">
+                  <div class="content__image--user">
+                    <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
+                  </div>
+                  <div class="content__image--form">
+                    <%= f.attachment_field :image %>
+                  </div>
+                </div>
+              <% end %>
           </div>
         </div>
       </div>

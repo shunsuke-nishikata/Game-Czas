@@ -13,7 +13,7 @@
     position: relative;
     margin: 2em 0;
     padding: 0.5em 1em;
-    border-top: solid 3px #303E4D;
+    border-top: solid 3px #45668a;
     margin: 0;
 }
 .border-title {
@@ -25,7 +25,7 @@
     height: 25px;
     line-height: 25px;
     font-size: 17px;
-    background: #303E4D;
+    background: #45668a;
     color: #ffffff;
     font-weight: bold;
     border-radius: 8px 8px 0 0;
@@ -34,9 +34,6 @@
 .heading__title--main {
     font-family: Heroes,Proxima Nova,Helvetica,Roboto,sans-serif;
     font-size: 5.5rem;
-    // padding: 2rem 0 4rem;
-    line-height: 1.35;
-    opacity: 1;
+    color:#45668a;
     text-align: center;
-    text-shadow: 0 0 40px hsla(0,0%,99.6%,.75);
 }

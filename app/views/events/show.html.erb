@@ -1,0 +1,85 @@
+<main class="row">
+  <div class="body body__mypage--edit">
+    <div class="heading">
+      <h3 class="heading__title--main">My Events ++</h3>
+      <h3 class="heading__title--ja">イベント詳細ページ</h3>
+      
+    </div>
+    <div class="heading__border">
+      <span class="border-title">イベントを確認しよう！</span>
+    </div>
+    <div class="content">
+      <div class="content__field--event">
+        <div class="content__fields">
+          <h2 class="content__fields--heading">My events</h2>
+          <div class="event__area">
+            <table class="table table-borderless ">
+              <tbody>
+                <tr>
+                  <th scope="row">イベント写真</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">イベント名</th>
+                  <td class="nomal-font font-sm"><%= @event.event_name %></td>
+                </tr>
+                <tr>
+                  <th scope="row">イベント日</th>
+                  <td class="nomal-font font-sm"><%= @event.event_data %></td>
+                </tr>
+                <tr>
+                  <th scope="row">開催時間〜終了時間</th>
+                  <td class="nomal-font font-sm">
+                    <%= @event.starting_time  %>
+                    &emsp;~ &emsp;
+                    <%= @event.ending_time %>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">料金</th>
+                  <td class="nomal-font"><%= @event.place %>円</td>
+                </tr>
+                <tr>
+                  <th scope="row">開催予定場所</th>
+                  <td class="nomal-font"><%= @event.game_location%></td>
+                </tr>
+              </tbody>
+            </table>
+            <%= link_to "編集", edit_event_path(@event), class: "mypage-button btn btn-info"%>
+            <%= link_to "削除", event_path(@event), method: :delete, class: "mypage-button btn btn-danger"%>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar__logo">
+      
+    </div>
+    <nav>
+      <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
+        <li class="nav-item">
+           <%= link_to "Home", events_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          Message
+        </li>
+        <li class="nav-item">
+          <%= link_to "Event Create", new_event_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Friend", users_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Page", user_path(current_user), class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Notification(通知)", notifications_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</main>
