@@ -15,9 +15,19 @@
 
 
 .nav-item {
-  color: white;
-  margin-bottom:25px;
+  display:block;
+  padding:2px;
   &:hover {
-    text-decoration:none;
+    text-decoration: none;
+    color: black;
+    background: radial-gradient(white, transparent);
   }
+}
+
+li.nav-item {
+  margin-bottom:25px;
+}
+
+a.nav-item {
+  color:white;
 }

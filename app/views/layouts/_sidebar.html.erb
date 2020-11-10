@@ -1,0 +1,30 @@
+ <div class="sidebar">
+    <div class="sidebar__logo">
+      
+    </div>
+    <nav>
+      <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
+        <li class="nav-item">
+          <%= link_to "Home", events_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Message", events_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Event Create", new_event_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Friend", users_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Page", user_path(current_user), class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Notification(通知)", notifications_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+        </li>
+      </ul>
+    </nav>
+  </div>

@@ -3,7 +3,10 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   
   def index
-    @events = Event.all
+    # @events = Event.all
+    # @events = Event.all.shuffle.take(8)
+  #   @products = Product.where(is_active: true).page(params[:page]).per(8)
+    @events  = Event.page(params[:page]).per(8)
   end
   
   def new
@@ -19,6 +22,7 @@ class EventsController < ApplicationController
   end
   
   def show
+    @event_comment = EventComment.new
   end
   
   def update

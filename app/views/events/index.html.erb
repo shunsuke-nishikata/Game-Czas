@@ -25,6 +25,20 @@
                     <%= event.starting_time %>
                     <span>~</span>
                     <%= event.ending_time %></br>
+                    <%= link_to event_path(event.id) do %>
+                      <i class="far fa-comments" style="color: black;"></i>
+                    <% end %>
+                    <%= event.event_comments.count%>
+                    <% if event.likes_by?(current_user) %>
+                      <%= link_to event_like_path(event.id, event.likes), method: :delete do %>
+                        <i class="fas fa-heart" style="color: red;"></i>
+                      <% end %>
+                      <%= event.likes.count %> 
+                    <% else %>
+                      <%= link_to event_likes_path(event.id), method: :post do %>
+                        <i class="far fa-heart" style="color: black;"></i>
+                      <% end %>
+                    <% end %>
                   </p>
                   <% if event.user != current_user %>
                     <%= link_to "イベント詳細", event_path(event.id), class: "btn btn-success" %>
@@ -35,19 +49,9 @@
               </div>
             <% end %>
           </div>
-          <div class="content__field-events--page">
-            <P>ページネーション</P>
+          <div class="col-xs-12 text-center">
+            <%= paginate @events %>
           </div>
-          <!--<div class="content__fields--flex">-->
-          <!--  <div class="card content__fields--flex-item-event" style="width: 18rem;">-->
-          <!--    <img src="..." class="card-img-top" alt="...">-->
-          <!--    <div class="card-body">-->
-          <!--      <h5 class="card-title">Card title</h5>-->
-          <!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-          <!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
-          <!--    </div>-->
-          <!--  </div>-->
-          <!--</div>-->
         </div>
         
         <div class="content__fields">
@@ -66,34 +70,5 @@
       </div>
     </div>
   </div>
-  <div class="sidebar">
-    <div class="sidebar__logo">
-      
-    </div>
-    <nav>
-      <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
-        <li class="nav-item">
-           <%= link_to "Home", events_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          Message
-        </li>
-        <li class="nav-item">
-          <%= link_to "Event Create", new_event_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Friend", users_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My Page", user_path(current_user), class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Notification(通知)", notifications_path, class: "nav-item" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-item" %>
-        </li>
-      </ul>
-    </nav>
-  </div>
+   <%= render 'layouts/sidebar' %>
 </main>

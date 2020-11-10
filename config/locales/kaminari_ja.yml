@@ -1,0 +1,9 @@
+# ページネーション用
+ja:
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&#8249;"
+      next: "&rsaquo;"
+      truncate: "..."

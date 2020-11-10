@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  has_many :events, dependent: :destroy
   attachment :image
+  has_many :events, dependent: :destroy
+  has_many :event_comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 end
