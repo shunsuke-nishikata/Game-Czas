@@ -1,8 +1,13 @@
 <main class="row">
   <div class="body body__mypage--edit">
     <div class="heading">
-      <h3 class="heading__title--main">My Events ++</h3>
-      <h3 class="heading__title--ja">イベント詳細ページ</h3>
+      <% if @event.user == current_user %>
+        <h3 class="heading__title--main">My Events ++</h3>
+        <h3 class="heading__title--ja">イベント詳細ページ</h3>
+      <% else %>
+        <h3 class="heading__title--main"><%= @event.user.name %> Events ++ </h3>
+        <h3 class="heading__title--ja"><%= @event.user.name %>さんのイベントページ</h3>
+      <% end %>
       
     </div>
     <div class="heading__border">
@@ -11,12 +16,16 @@
     <div class="content">
       <div class="content__field--event">
         <div class="content__fields">
-          <h2 class="content__fields--heading">My events</h2>
+          <% if @event.user == current_user %>
+            <h2 class="content__fields--heading">My Event</h2>
+          <% else %>
+            <h2 class="content__fields--heading"><%= @event.user.name %> Event details</h2>
+          <% end %>
           <div class="event__area">
             <table class="table table-borderless ">
               <tbody>
                 <tr>
-                  <th scope="row">イベント写真</th>
+                  <th scope="row"></th>
                   <td></td>
                 </tr>
                 <tr>
@@ -25,14 +34,14 @@
                 </tr>
                 <tr>
                   <th scope="row">イベント日</th>
-                  <td class="nomal-font font-sm"><%= @event.event_data %></td>
+                  <td class="nomal-font font-sm"><%= @event.event_data.to_s(:date_jp) %></td>
                 </tr>
                 <tr>
                   <th scope="row">開催時間〜終了時間</th>
                   <td class="nomal-font font-sm">
-                    <%= @event.starting_time  %>
+                    <%= @event.starting_time.to_s(:time)  %>
                     &emsp;~ &emsp;
-                    <%= @event.ending_time %>
+                    <%= @event.ending_time.to_s(:time) %>
                   </td>
                 </tr>
                 <tr>
@@ -45,10 +54,24 @@
                 </tr>
               </tbody>
             </table>
-            <div class="event__area--buttons">
-              <%= link_to "編集", edit_event_path(@event), class: "mypage-button btn btn-info "%>
-              <%= link_to "削除", event_path(@event), method: :delete, class: "mypage-button btn btn-danger"%>
-            </div>
+            <% if @event.user != current_user %>
+              <%= form_with model: @event, url: event_path(@event), local: true do |f| %>
+                <% if @event.is_request == false %>
+                  <%= f.hidden_field :is_request, value: true %>
+                  <%= f.submit "オファーする！", class: "btn btn-primary" %>
+                <% else %>
+                  <%= f.hidden_field :is_request, value: false %>
+                  <%= f.submit "オファー済み！", class: "btn btn-primary" %>
+                <% end %>
+              <% end %>
+            <% end %>
+            
+            <% if @event.user == current_user %>
+              <div class="event__area--buttons">
+                <%= link_to "編集", edit_event_path(@event), class: "mypage-button btn btn-info "%>
+                <%= link_to "削除", event_path(@event), method: :delete, class: "mypage-button btn btn-danger"%>
+              </div>
+            <% end %>
             <div class="heading__border">
               <span class="border-title">コメントはこちらから！</span>
             </div>
@@ -95,9 +118,6 @@
             <% end %>
             <i class="far fa-comments" style="color: black;"></i>
             <%= @event.event_comments.count %>コメント
-            <div class="float-wrapper">
-              <h2 class="comment-count"><%#= @event.event_comments.count %>件コメント</h2>
-            </div>
 <!--コメントフォーム領域-->
             <%= form_with(model:[@event, @event_comment],url:  event_event_comments_path(@event), local: true) do |f| %>
               <div class="row">

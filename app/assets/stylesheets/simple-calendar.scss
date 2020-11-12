@@ -1,6 +1,7 @@
 .simple-calendar {
   .day {
     height:150px!important;
+    text-align: left!important;
   }
   .wday-0 {
     color:#b14a4a;
@@ -85,3 +86,6 @@ th.days-ja {
     text-align: center!important;
 }
 
+a.calendar__content--name {
+    color: black;
+}
