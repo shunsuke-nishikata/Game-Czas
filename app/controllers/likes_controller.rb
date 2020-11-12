@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     like = Like.new(event_id: event.id)
     like.user_id = current_user.id
     like.save
-    redirect_to event_path(event.id)
+    redirect_back(fallback_location: root_path)
   end
   
   def destroy
@@ -13,6 +13,6 @@ class LikesController < ApplicationController
     event = Event.find(params[:event_id])
     like = current_user.likes.find_by(event_id: event.id)
     like.destroy
-    redirect_to event_path(params[:event_id])
+    redirect_back(fallback_location: root_path)
   end
 end

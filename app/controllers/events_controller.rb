@@ -3,10 +3,12 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   
   def index
-    # @events = Event.all
-    # @events = Event.all.shuffle.take(8)
-  #   @products = Product.where(is_active: true).page(params[:page]).per(8)
-    @events  = Event.page(params[:page]).per(8)
+    @events = Event.all
+    @new_events  = Event.page(params[:page]).per(8)
+    # @today_events = Event.where(is_request: true, user_id: current_user)
+    @today_events = Event.joins(:user).where(is_request: true, user_id: current_user.id)
+    # binding.pry
+    
   end
   
   def new
@@ -27,7 +29,7 @@ class EventsController < ApplicationController
   
   def update
     @event.update(event_params)
-    redirect_to event_path(@event.id)
+    redirect_back(fallback_location: root_path)
   end
   
   def destroy
@@ -43,6 +45,6 @@ class EventsController < ApplicationController
   end
   
   def event_params
-    params.require(:event).permit(:event_image,:event_name,:event_data,:starting_time,:ending_time,:game_location,:place)
+    params.require(:event).permit(:event_image,:event_name,:event_data,:starting_time,:ending_time,:game_location,:place,:is_request)
   end
 end

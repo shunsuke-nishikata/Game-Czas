@@ -5,7 +5,7 @@
       <h3 class="heading__title--ja">ログインページ</h3>
     </div>
     <div class="heading__border">
-      <span class="border-title">Game-Czas</span>
+      <span class="border-title">Loginして参加しよう！</span>
     </div>
     <div class="content text-center">
       <div class="content__field">
@@ -42,14 +42,14 @@
     <nav>
       <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
         <li class="nav-item">
-           Home
+          <%= link_to "TOP", root_path, class: "nav-item" %>
         </li>
-        <li class="nav-item">Message</li>
-        <li class="nav-item">Event</li>
-        <li class="nav-item">Frinds</li>
-        <li class="nav-item">My Page</li>
-        <li class="nav-item">Notification</li>
-        <li class="nav-item">Sign Out</li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class: "nav-item" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-item" %>
+        </li>
       </ul>
     </nav>
   </div>
