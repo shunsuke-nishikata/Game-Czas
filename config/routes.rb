@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :event_comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
   end
+  get 'events#favorite_events'
   resources :notifications, only: [:index]
 end

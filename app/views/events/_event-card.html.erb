@@ -34,10 +34,10 @@
           <%= form_with model: event, url: event_path(event), local: true do |f| %>
             <% if event.is_request == false %>
               <%= f.hidden_field :is_request, value: true %>
-              <%= f.submit "オファーする", class: "btn btn-primary card-bosy__button" %>
+              <%= f.submit "お気に入り！", class: "btn btn-primary card-bosy__button" %>
             <% else %>
               <%= f.hidden_field :is_request, value: false %>
-              <%= f.submit "オファー済み", class: "btn btn-primary card-bosy__button" %>
+              <%= f.submit "お気に入り済み", class: "btn btn-primary card-bosy__button" %>
             <% end %>
           <% end %>
           <%= link_to "イベント詳細", event_path(event.id), class: "btn btn-success" %>

@@ -89,3 +89,10 @@ gem 'rails-i18n', '~> 5.1'
 # https://pikawaka.com/rails/font_awesome_sass
 # font_awesome_sass導入
 gem 'font-awesome-sass'
+
+# 環境変数
+gem 'dotenv-rails'
+# 本番環境データベース
+group :production do
+  gem 'mysql2'
+end
