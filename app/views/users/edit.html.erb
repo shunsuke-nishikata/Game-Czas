@@ -15,55 +15,60 @@
           <h2 class="content__fields--heading">My Profile</h2>
           <div class="content__fields--flex">
             <div class="content__fields--flex-item-mypage1">
-              <%= form_with model: @user, url: user_path(current_user), local: :true do |f| %>
-                 <div class="content__field--form-mypage">
-                    <%= f.label "名前", class: "content__field--label-mypage" %><br/>
-                    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
-                  </div>
-                  
-                  <div class="content__field--form-mypage">
-                    <%= f.label "性別", class: "content__field--label-mypage" %><br/>
+            <%= form_with model: @user, url: user_path(current_user), local: :true do |f| %>
+              <div class="content__image--user">
+                <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
+              </div>
+              <div class="content__image--form">
+                <%= f.attachment_field :image %>
+              </div>
+            　<div class="content__field--form-mypage">
+                <%= f.label "--- 自己紹介 ---", class: "content__field--label-mypage" %>
+                <%= f.text_area :introduction, class: "form-control content__field--form-introduction" %>
+              </div>
+            </div>
+            
+            
+            <div class="content__fields--flex-item-mypage2">
+               <table class="table">
+                <h3>Profile</h3>
+                <tr>
+                  <th class="content__profile">名前</th>
+                  <td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <th class="content__profile">性別</th>
+                  <td>
                     <%= f.radio_button :sex, false, checked: true %>男性 
                     <%= f.radio_button :sex, true %>女性
-                  </div>
-                
-                  <div class="content__field--form-mypage">
-                    <%= f.label "年齢", class: "content__field--label-mypage" %>
-                    <%= f.number_field :age, class: "age", min: 15, max: 100, class: "form-control" %>
-                  </div>
-                
-                  <div class="content__field--form-mypage">
-                    <%= f.label "よくやるゲーム", class: "content__field--label-mypage" %>
-                    <%= f.text_area :favorite_game, class: "form-control" %>
-                  </div>
-                  <div class="content__field--form-mypage">
-                    <%= f.label "自己紹介", class: "content__field--label-mypage" %>
-                    <%= f.text_area :introduction, class: "form-control" %>
-                  </div>
-                  <div class="content__field--form-mypage">
-                    <%= f.label "My SNS", class: "content__field--label-mypage" %>
-                    <div>
-                      <%= f.label "ツイッターURL", class: "content__field--label-mypage" %>
-                      <%= f.text_field :twitter, class: "form-control" %>
-                      <%= f.label "インスタグラムURL", class: "content__field--label-mypage" %>
-                      <%= f.text_field :instagram, class: "form-control" %>
-                      <%= f.label "ユーチューブURL", class: "content__field--label-mypage" %>
-                      <%= f.text_field :youtube, class: "form-control" %>
-                    </div>
-                  </div>
-                  <div class="content__field--button">
-                    <%= f.submit "更新する", class: "mypage-button btn btn-success"%>
-                  </div>
-                </div>
-                <div class="content__fields--flex-item-mypage2">
-                  <div class="content__image--user">
-                    <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
-                  </div>
-                  <div class="content__image--form">
-                    <%= f.attachment_field :image %>
-                  </div>
-                </div>
-              <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="content__profile">年齢</th>
+                  <td><%= f.number_field :age, class: "age", min: 15, max: 100, class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <th class="content__profile">よくやるゲーム</th>
+                  <td><%= f.text_area :favorite_game, class: "form-control" %></td>
+                </tr>
+                <tr>
+                  <th class="content__profile">SNSリンク</th>
+                  
+                  <td>
+                    <i class="fab fa-twitter"></i>
+                    <%= f.text_field :twitter, class: "form-control" %>
+                    <i class="fab fa-instagram"></i>
+                    <%= f.text_field :instagram, class: "form-control" %>
+                    <i class="fab fa-youtube"></i>
+                    <%= f.text_field :youtube, class: "form-control" %>
+                  </td>
+                </tr>
+              </table>
+              <div class="content__field--button">
+                <%= f.submit "更新する", class: "mypage-button btn btn-success"%>
+              </div>
+            </div>
+            <% end %>
           </div>
         </div>
       </div>

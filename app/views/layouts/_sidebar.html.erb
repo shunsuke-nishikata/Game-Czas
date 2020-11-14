@@ -11,13 +11,13 @@
           <%= link_to "Message", events_path, class: "nav-item" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Favorite Events", events_path, class: "nav-item" %>
+          <%= link_to "Favorite Events", favorite_events_path, class: "nav-item" %>
         </li>
         <li class="nav-item">
           <%= link_to "Event Create", new_event_path, class: "nav-item" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Friend", users_path, class: "nav-item" %>
+          <%= link_to "Friend", matching_path, class: "nav-item" %>
         </li>
         <li class="nav-item">
           <%= link_to "My Page", user_path(current_user), class: "nav-item" %>

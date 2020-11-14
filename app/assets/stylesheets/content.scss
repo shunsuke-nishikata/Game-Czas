@@ -73,19 +73,17 @@
 
 // マイページ、編集ページのレイアウトCSS
 .content__fields--flex-item-mypage1 {
-    width: 70%;
+    width: 45%;
     background: white;
-    // margin-right: 20px;
     color:black;
     padding: 5%;
 }
 
 .content__fields--flex-item-mypage2 {
-    width: 30%;
+    width: 50%;
     background: white;
-    // margin-right: 20px;
     color:black;
-    // padding: 5%;
+    padding: 5%;
 }
 
 // マイページのテーブルレイアウト
@@ -103,11 +101,30 @@ th.content__profile {
 
 // ユーザーの写真領域のCSS
 .content__image--user {
-    margin-top: 50px;
+    margin-top: -20px;
 }
 // 写真投稿ボタンのCSS
 .content__image--form {
     margin-top: 50px;
 }
 
+.content__fields--favorite_calendar {
+  border-radius: 20px;
+  padding: 5%;
+  margin-bottom: 10%;
+  background:#8fbc8f;
+}
 
+.content__field--follow {
+  margin-top:30px;
+  margin-bottom:20px;
+}
+
+.content__fields--matching-users {
+  line-height: 80px;
+}
+
+// ユーザー編集画面の自己紹介フォーム
+textarea#user_introduction {
+    height: 200px;
+}

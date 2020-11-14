@@ -2,13 +2,15 @@ class EventsController < ApplicationController
   
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   
+  
   def index
-    @events = Event.all
+    @events = Event.where.not(user_id: current_user.id)
     @new_events  = Event.page(params[:page]).per(8)
-    # @today_events = Event.where(is_request: true, user_id: current_user)
-    @today_events = Event.joins(:user).where(is_request: true, user_id: current_user.id)
-    # binding.pry
-    
+    # @new_events  = Event.all.shuffle.take(8)
+    @today_events = Event.where(is_request: true, user_id: current_user.id)
+    # from = Time.current.beginning_of_day
+    # to = Time.current.end_of_day
+    # @today_events = Event.where.not(is_request: false, user_id: current_user.id).find(date: from..to)
   end
   
   def new
@@ -36,9 +38,6 @@ class EventsController < ApplicationController
     @event.destroy
     # イベントindexページへ
     redirect_to events_path
-  end
-  
-  def favorite_events
   end
   
   private

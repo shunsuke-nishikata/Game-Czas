@@ -1,21 +1,60 @@
 <main class="row">
   <div class="body body__mypage">
-    <div class="heading">
-<!--自分の詳細ページか他のユーザーの詳細ページかで表示を変える-->
-      <h1 class="heading__title--en"></h1>
-      <h3 class="heading__title--main">My page ++</h3>
-      <h3>自分の詳細ページ</h3>
-    </div>
-    <div class="heading__border">
-      <span class="border-title">プロフィールを充実させよう</span>
-    </div>
+    <% if @user == current_user %>
+      <div class="heading">
+  <!--自分の詳細ページか他のユーザーの詳細ページかで表示を変える-->
+        <h1 class="heading__title--en"></h1>
+        <h3 class="heading__title--main">My page ++</h3>
+        <h3>詳細ページ</h3>
+      </div>
+      <div class="heading__border">
+        <span class="border-title">プロフィールを充実させよう</span>
+      </div>
+    <% else %>
+      <div class="heading">
+  <!--自分の詳細ページか他のユーザーの詳細ページかで表示を変える-->
+        <h3 class="heading__title--main"><%= @user.name %> Profile ++</h3>
+        <h3 class="heading__title--en"><%= @user.name %>の詳細ページ</h3>
+      </div>
+      <div class="heading__border">
+        <span class="border-title"><%= @user.name %>のプロフィールを確認しよう</span>
+      </div>
+    <% end %>
     <div class="content">
       <div class="content__field--mypage">
         <div class="content__fields">
-          <h2 class="content__fields--heading">My Profile</h2>
+          <% if @user == current_user %>
+            <h2 class="content__fields--heading">My Profile</h2>
+          <% else %>
+            <h2 class="content__fields--heading"><%= @user.name %> Profile</h2>
+          <% end %>
           <div class="content__fields--flex">
             <div class="content__fields--flex-item-mypage1">
+              <div class="content__image--user">
+                <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
+              </div>
+              <p>follow <%= @user.followings.count %>人 &nbsp; follower<%= @user.followers.count %>人</p>
+              <div class="content__field--follow">
+                <% if @user.id != current_user.id %>
+                  <% if current_user.following?(@user) %>
+                    <%= link_to "フォロー外す", user_relationships_path(@user), method: :delete, class: "btn btn-primary" %>
+                  <% else %>
+                    <%= link_to "フォローする", user_relationships_path(@user), method: :post, class: "btn btn-success" %>
+                  <% end %>
+                <% end %>
+              </div>
+              <table class="table table-bordered ">
+                <tr>
+                  <th class="content__profile">--- 自己紹介 ---</th>
+                </tr>
+                <tr>
+                  <td><%= @user.introduction %></td>
+                </tr>
+              </table>
+            </div>
+            <div class="content__fields--flex-item-mypage2">
               <table class="table">
+                <h3>Profile</h3>
                 <tr>
                   <th class="content__profile">名前</th>
                   <td><%= @user.name %></td>
@@ -37,34 +76,31 @@
                   <td><%= @user.favorite_game %></td>
                 </tr>
                 <tr>
-                  <th class="content__profile">自己紹介</th>
-                  <td><%= @user.introduction %></td>
-                </tr>
-                <tr>
                   <th class="content__profile">SNSリンク</th>
                   <td>
-                    <%= @user.twitter %></br>
-                    <%= @user.instagram %></br>
-                    <%= @user.youtube %>
+                    <% if @user.twitter.present? %>
+                      <%= link_to @user.twitter, target: :_blank do %>
+                        <i class="fab fa-twitter"></i>
+                      <% end %>
+                    <% end %>
+                    <% if @user.instagram.present? %>
+                      <%= link_to @user.instagram, target: :_blank do %>
+                        <i class="fab fa-instagram"></i>
+                      <% end %>
+                    <% end %>
+                    <% if @user.youtube.present? %>
+                      <%= link_to @user.youtube, target: :_blank do %>
+                        <i class="fab fa-youtube"></i>
+                      <% end %>
+                    <% end %>
                   </td>
                 </tr>
               </table>
-              <div class="content__field--button">
-                <%= link_to "編集", edit_user_path(current_user), class: "mypage-button btn btn-info"%>
-              </div>
-            </div>
-            <div class="content__fields--flex-item-mypage2">
-              <div class="content__image--user">
-                <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
-              </div>
-              <!--<table class="table table-bordered ">-->
-              <!--  <tr>-->
-              <!--    <th class="content__profile">自己紹介</th>-->
-              <!--  </tr>-->
-              <!--  <tr>-->
-              <!--    <td><%#= @user.introduction %></td>-->
-              <!--  </tr>-->
-              <!--</table>-->
+              <% if @user.id == current_user.id %>
+                <div class="content__field--button">
+                  <%= link_to "編集", edit_user_path(current_user), class: "mypage-button btn btn-info"%>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
