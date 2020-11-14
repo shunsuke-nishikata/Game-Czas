@@ -1,0 +1,18 @@
+<main class="row">
+  <div class="body body__events">
+    <div class="heading">
+      <h1 class="heading__title--main">My Favorite Events ++</h1>
+      <h3 class="heading__title--ja">お気に入りに登録したイベント</h3>
+    </div>
+    <div class="heading__border">
+      <span class="border-title">お気に入りイベントを確認！</span>
+    </div>
+    <div class="content">
+      
+      
+       <%= render 'layouts/favorite_calendar', events: @events %>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/sidebar' %>
+</main>

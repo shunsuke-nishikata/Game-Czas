@@ -14,9 +14,19 @@ class UsersController < ApplicationController
   
   def update
     @user.update(user_params)
-    # binding.pry
     redirect_to user_path(current_user.id)
   end
+  
+  def favorite_events
+    @user = current_user
+    # 自分が作成していないイベント全て
+    @events = Event.where.not(user_id: current_user.id)
+  end
+  
+  def matching
+    @users = current_user.matching
+  end
+  
   
   private
   

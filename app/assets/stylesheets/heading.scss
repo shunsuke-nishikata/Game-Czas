@@ -37,3 +37,27 @@
     color:#45668a;
     text-align: center;
 }
+
+// コメントエリアのみ色変更
+.heading__border--comment {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border-top: solid 3px #c1a470;
+  margin: 0;
+}
+
+.border-title-comment {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: 0px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #c1a470;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+}

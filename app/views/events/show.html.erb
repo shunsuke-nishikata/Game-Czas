@@ -22,6 +22,7 @@
             <h2 class="content__fields--heading"><%= @event.user.name %> Event details</h2>
           <% end %>
           <div class="event__area">
+            
             <table class="table table-borderless ">
               <tbody>
                 <tr>
@@ -72,8 +73,12 @@
                 <%= link_to "削除", event_path(@event), method: :delete, class: "mypage-button btn btn-danger"%>
               </div>
             <% end %>
-            <div class="heading__border">
-              <span class="border-title">コメントはこちらから！</span>
+            
+          </div>
+          <div class="event__area--border"></div>
+          <div class="event__area--comments">
+            <div class="heading__border--comment">
+              <span class="border-title-comment">コメントはこちらから！</span>
             </div>
 <!--コメント表示領域-->
             <% @event.event_comments.each do |event_comment| %>
@@ -127,7 +132,7 @@
               </div>
               <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
             <% end %>
-        </div>
+          </div>
         </div>
       </div>
     </div>
