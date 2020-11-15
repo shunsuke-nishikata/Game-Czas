@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
   
   def matching
-    @users = current_user.matching
+    @friends = current_user.matching
   end
   
   

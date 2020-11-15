@@ -24,7 +24,7 @@
           <div class="content__fields--flex">
           <!--今日のイベントがnilの場合の条件分岐-->
           <% if @today_events.present? %>
-            <h3>参加予定のイベントはありません</h3>
+            <h3 style="color:white;">予定のイベントはありません</h3>
           <% else %>
             <% @today_events.each do |event_today| %>
               <% if event_today.is_request == true %>

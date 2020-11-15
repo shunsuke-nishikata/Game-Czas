@@ -19,7 +19,7 @@
 <!--いいね領域-->
         <% if event.likes_by?(current_user) %>
           <%= link_to event_like_path(event.id, event.likes), method: :delete do %>
-            <i class="fas fa-heart" style="color: red;"></i>
+            <i class="fas fa-heart" style="color: #d7c447;"></i>
           <% end %>
           <%= event.likes.count %> 
         <% else %>

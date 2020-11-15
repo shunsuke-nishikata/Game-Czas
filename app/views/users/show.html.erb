@@ -41,6 +41,7 @@
                   <% else %>
                     <%= link_to "フォローする", user_relationships_path(@user), method: :post, class: "btn btn-success" %>
                   <% end %>
+                  <%= link_to "Message", room_path(@user.id), class: "btn btn-warning" %>
                 <% end %>
               </div>
               <table class="table table-bordered ">
