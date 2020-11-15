@@ -1,0 +1,89 @@
+.message-box__user-right,
+.message-box__user-left{
+  margin: 30px 0;
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.message-box__user-left{
+  margin-left:35px;
+}
+
+.message-box__user-right{
+  margin-right:35px;
+}
+
+.message-box__user-right {
+  justify-content:flex-end;
+}
+
+.says-r {
+  max-width:500px; /*最大幅は任意*/
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 17px 13px 15px 18px;
+  border-radius: 12px;
+  background: #00B900;/*色は任意*/
+  box-sizing:border-box;
+  margin:0 !important;
+  line-height:1.5;
+/*   align-items: center; */
+}
+.says-l {
+  max-width:500px; /*最大幅は任意*/
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 17px 13px 15px 18px;
+  border-radius: 12px;
+  background:#f7f7f7;/*色は任意*/
+  box-sizing:border-box;
+  margin:0 !important;
+  line-height:1.5;
+/*   align-items: center; */
+}
+.says p{
+  margin:8px 0 0 !important; 
+}
+.says p:first-child{
+  margin-top:0 !important;
+}
+.says-r:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+/*   margin-top:-3px;  */
+}
+.says-l:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+/*   margin-top:-3px;  */
+}
+.message-box__user-left .says-l:after {
+  left: -26px;
+  border-right: 22px solid #f7f7f7;
+}
+.message-box__user-right .says-r:after {
+  right: -26px;
+  border-left: 22px solid #00B900;
+}
+
+
+img.attachment.user.image.message-icon-r {
+    margin-top: -15px;
+    margin-left: 25px;
+}
+
+img.attachment.user.image.message-icon-l {
+    margin-top: -15px;
+    margin-right: 25px;
+}
+
+input#message_message {
+    width: 250px;
+    border-radius: 5%;
+    height: 35px;
+}

@@ -128,3 +128,23 @@ th.content__profile {
 textarea#user_introduction {
     height: 200px;
 }
+
+
+// メッセージ系のCSS
+.content__fields--friend-message {
+    background: white;
+    width: 100%;
+}
+
+.content__fields--friend-message {
+    background: white;
+    width: 75%;
+}
+
+.content__fields--block {
+    padding: 5%;
+}
+
+.content__fields--message-form {
+    margin: 30px;
+}

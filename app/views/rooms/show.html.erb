@@ -1,0 +1,68 @@
+<main class="row">
+  <div class="body body__frinds">
+    <div class="heading">
+      <h3 class="heading__title--main">Messages ++</h3>
+      <h3>
+        <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "150x150"%></br>
+        <%= @user.name %>
+      </h3>
+    </div>
+    <div class="heading__border">
+      <span class="border-title"><%= @user.name %> さんにメッセージを送ろう！</span>
+    </div>
+    <div class="content">
+      <div class="content__field--messages">
+        <div class="content__fields">
+          <h2 class="content__fields--heading">Message Area</h2>
+          <div class="content__fields--flex">
+            <div class="content__fields--friend-message">
+             <div class="content__fields--block">
+        
+              <%# if @messages.present?%>
+                <% @messages.each do |message| %>
+                  <% if message.user_id == current_user.id %>
+                    <div class="message-box__user-right">
+                      <div class="message-field">
+                        <p class="says-r"><%= message.message %></p>
+                        <%= message.created_at.strftime("%Y-%m-%d %H:%M")%>
+                      </div>
+                      <div class="message-user">
+                        <%= attachment_image_tag message.user, :image, format: 'jpeg' , size: "100x100", class: "message-icon-r"%>
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="message-box__user-left">
+                      <div class="message-user">
+                        <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "100x100", class: "message-icon-l"%>
+                      </div>
+                      <div class="message-field">
+                        <p class="says-l"><%= message.message %></p>
+                        <%= message.created_at.strftime("%Y-%m-%d %H:%M")%>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
+              <%# else %>
+                <%# メッセージが何もない場合 %>
+                <div class="no-message"></div>
+              <%# end %>
+            </div>
+            <div class="content__fields--message-form">
+              <%= form_with model: @message, local: true do |f| %>
+                <%= f.text_field :message, class:"message-form__textarea" %>
+                <%= f.hidden_field :room_id, value: @room.id%>
+                <%# 767px以下のみ表示 %>
+                <%= f.submit "送信", class: "content__fields--message-button" %>
+                <%= f.button type: "submit", class:"btn green-btn btn-sm"  do %>
+                  <i class="far fa-arrow-alt-circle-right"></i>
+                <% end %>
+              <% end %>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/sidebar' %>
+</main>
