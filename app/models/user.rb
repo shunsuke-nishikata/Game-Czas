@@ -49,4 +49,19 @@ class User < ApplicationRecord
     followings & followers
   end
   
+  def self.search_for(search_word)
+    if search_word
+      User.where('name LIKE ?', '%' + search_word + '%')
+    else
+      User.where.not(id: current_user.id)
+    end
+  end
+  
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "ゲストユーザー"
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
 end

@@ -1,0 +1,12 @@
+<div class="search">
+  <div class="search-form">
+    <div class="search-form__users">
+      <%= form_with url: user_search_path, method: :get, local: true do |f| %>
+        <%= f.text_field :search_word %>
+        <%= f.button type: "submit", class: "aaa"  do %>
+         <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

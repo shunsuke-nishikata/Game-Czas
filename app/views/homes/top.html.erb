@@ -12,7 +12,7 @@
           <%= link_to "ログインページへ", new_user_session_path, class: "col-xs-4 main-visual__sign-in" %>
         </div>
         <div class="main-visual__button-field">
-          <%= link_to "かんたんログイン", new_user_session_path, class: "col-xs-4 main-visual--easy" %>
+          <%= link_to "かんたんログイン", users_guest_sign_in_path, method: :post, class: "col-xs-4 main-visual--easy" %>
         </div>
     </div>
   </div>

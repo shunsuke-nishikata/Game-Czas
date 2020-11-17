@@ -39,3 +39,30 @@ img.attachment.user.image {
 .no-message {
     height: 400px;
 }
+
+
+.search {
+    text-align: right;
+}
+
+.search-form {
+    margin-bottom: 30px;
+    padding: 2%;
+    background: #303E4D;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+input#search_word {
+    height: 35px;
+}
+
+button.aaa {
+    border-radius: 50%;
+    color: white;
+    background: #8fbc8f;
+}
+
+td.content__fields--matching-users {
+    width: 120px;
+}
