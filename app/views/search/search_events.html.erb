@@ -1,0 +1,80 @@
+<main class="row">
+  <div class="body body__frinds">
+    <div class="heading">
+      <h3 class="heading__title--main">Event Search ++</h3>
+      <h3>イベント検索</h3>
+    </div>
+    <div class="heading__border">
+      <span class="border-title">好みのイベントを探そう！</span>
+    </div>
+    <div class="content">
+      <div class="content__field--friends">
+        <%= render 'layouts/users_search' %>
+        <div class="content__fields">
+          <h2 class="content__fields--heading">Search Events</h2>
+          <div class="content__fields--flex">
+            <div class="content__fields--friends">
+              <% @search_events.each do |event| %>
+                <table class="table table-hover">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>作成者</th>
+                      <th>イベント詳細</th>
+                      <th>料金</th>
+                      <th>イベント名</th>
+                      <th>日にち</th>
+                      <th>開始</th>
+                      <th>性別</th>
+                      <th>SNS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="content__fields--matching-users">
+                        <%= link_to user_path(event.user) do %>
+                          <%= attachment_image_tag event.user, :image, format: 'jpeg' , size: "70x70"%>
+                        <% end %>
+                      </td>
+                      <td class="content__fields--matching-users">
+                        <%= link_to "イベント詳細", event_path(event.id), class: "btn btn-success" %>
+                      </td>
+                      <td class="content__fields--matching-users"><%= event.place %></td>
+                      <td class="content__fields--matching-users"><%= event.event_name %></td>
+                      <td class="content__fields--matching-users"><%= event.event_data.to_s(:date_jp)%></td>
+                      <td class="content__fields--matching-users">
+                        <%= event.starting_time.to_s(:time) %> ~ 
+                      </td>
+                      <% if event.user.sex == true %>
+                        <td class="content__fields--matching-users">女性</td>
+                      <% else %>
+                        <td class="content__fields--matching-users">男性</td>
+                      <% end %>
+                      <td class="content__fields--matching-users">
+                        <% if event.user.twitter.present? %>
+                          <%= link_to event.user.twitter, target: :_blank do %>
+                            <i class="fab fa-twitter"></i>
+                          <% end %>
+                        <% end %>
+                        <% if event.user.instagram.present? %>
+                          <%= link_to event.user.instagram, target: :_blank do %>
+                            <i class="fab fa-instagram"></i>
+                          <% end %>
+                        <% end %>
+                        <% if event.user.youtube.present? %>
+                          <%= link_to event.user.youtube, target: :_blank do %>
+                            <i class="fab fa-youtube"></i>
+                          <% end %>
+                        <% end %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/sidebar' %>
+</main>

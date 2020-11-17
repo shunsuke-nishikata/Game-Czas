@@ -14,35 +14,35 @@
           <h2 class="content__fields--heading">My events</h2>
           <div class="event__area">
             <%= form_with model: @event, url: events_path, local: true do |f| %>
-              <table class="table table-borderless ">
+              <table class="table table-borderless event__area--table-new">
                 <tbody>
                   <tr>
-                    <th scope="row">イベント写真</th>
+                    <th class="content__events">イベント写真</th>
                   </tr>
                   <tr>
-                    <th scope="row">イベント名</th>
-                    <td class="nomal-font font-sm"><%= f.text_field :event_name, autofocus: true, autocomplete: "event_name", class:"create-event-form" %></td>
+                    <th class="content__events">イベント名</th>
+                    <td><%= f.text_field :event_name, autofocus: true, autocomplete: "event_name", class: "form-control event-new" %></td>
                   </tr>
                   <tr>
-                    <th scope="row">イベント日</th>
-                    <td class="nomal-font font-sm"><span class="event__area--supplement">＊&emsp;日付を選択してください</span></br><%= f.date_field :event_data, autocomplete: "event_data", class:"create-event-form" %></td>
+                    <th class="content__events">イベント日</th>
+                    <td><span class="event__area--supplement">＊&emsp;日付を選択してください</span></br><%= f.date_field :event_data, autocomplete: "event_data", class: "form-control" %></td>
                   </tr>
                   <tr>
-                    <th scope="row">開催時間〜終了時間</th>
-                    <td class="nomal-font font-sm">
+                    <th class="content__events">開催時間〜終了時間</th>
+                    <td >
                       <span class="event__area--supplement">＊&emsp;時間を選択してください</span></br>
-                      <%= f.time_field :starting_time, autocomplete: "start_time", class:"create-event-form--time" %>
-                      &emsp;ーー&emsp;
-                      <%= f.time_field :ending_time, autocomplete: "finish_time", class:"create-event-form--time" %>
+                      <%= f.time_field :starting_time, autocomplete: "start_time", class: "form-control event-new" %>
+                      &emsp;~&emsp;
+                      <%= f.time_field :ending_time, autocomplete: "finish_time", class: "form-control event-new" %>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">料金</th>
-                    <td class="nomal-font"><%= f.text_field :place, autocomplete: "place", class:"create-event-textarea", placeholder: "" %>円</td>
+                    <th class="content__events">料金</th>
+                    <td><%= f.text_field :place, autocomplete: "place", class: "form-control event-new", placeholder: "" %>円</td>
                   </tr>
                   <tr>
-                    <th scope="row">開催予定場所</th>
-                    <td class="nomal-font"><%= f.text_area :game_location, autocomplete: "game_location", class:"create-event-textarea", placeholder: "開催場所を記入" %></td>
+                    <th class="content__events">開催予定場所</th>
+                    <td><%= f.text_area :game_location, autocomplete: "game_location", class: "form-control event-new", placeholder: "開催場所を記入" %></td>
                   </tr>
                 </tbody>
               </table>

@@ -26,8 +26,11 @@
             <table class="table table-borderless ">
               <tbody>
                 <tr>
-                  <th scope="row"></th>
-                  <td></td>
+                  <th scope="row">イベント作成者</th>
+                  <td>
+                    <%= attachment_image_tag @event.user, :image, format: 'jpeg' , size: "120x120"%></br>
+                    <%= @event.user.name %>
+                  </td>
                 </tr>
                 <tr>
                   <th scope="row">イベント名</th>
