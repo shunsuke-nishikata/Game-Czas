@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :event_comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :requests, dependent: :destroy
   
   
   # 引数で渡されたユーザーIDがlikesテーブル内に存在するかどうか調べるメソッド
@@ -12,6 +13,10 @@ class Event < ApplicationRecord
     likes.where(user_id: user.id).exists?
   end
   
+  def requests_by?(user)
+    requests.where(user_id: user.id).exists?
+  end
+  
   def start_time
     self.event_data
   end
@@ -19,6 +24,8 @@ class Event < ApplicationRecord
   def self.search_for(search_word)
     if search_word
       Event.where('event_name LIKE ?', '%'+search_word+'%')
+      # Event.where('event_name ?', search_word + '%')
+      # Event.where('event_name ?', '%' + search_word)
     else
       Event.all
     end

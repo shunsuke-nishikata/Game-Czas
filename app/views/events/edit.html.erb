@@ -1,7 +1,8 @@
 <main class="row">
   <div class="body body__mypage--edit">
     <div class="heading">
-      <h3 class="heading__title--main">Event Edit ++</h3>
+<!--自分の詳細ページか他のユーザーの詳細ページかで表示を変える-->
+      <h3 class="heading__title--main">Events Edit++</h3>
       <h3 class="heading__title--ja">イベント編集ページ</h3>
       
     </div>
@@ -9,48 +10,72 @@
       <span class="border-title">ゲームイベントを編集しよう！</span>
     </div>
     <div class="content">
-      <div class="content__field--event">
+      <div class="content__field--edit-mypage">
         <div class="content__fields">
-          <h2 class="content__fields--heading">My events</h2>
-          <div class="event__area">
-            <%= form_with model: @event, url: event_path(@event), local: true do |f| %>
-              <table class="table table-borderless ">
-                <tbody>
+          <h2 class="content__fields--heading">My Event</h2>
+          <%= form_with model: @event, url: event_path(@event), local: true do |f| %>
+            <div class="content__fields--flex">
+              <div class="content__fields--flex-item-mypage1">
+                <div class="content__image--user">
+                  <%= attachment_image_tag current_user, :image, format: 'jpeg' , size: "250x250"%>
+                </div>
+              　<div class="content__field--form-mypage">
+                  <%= f.label "--- イベントメモ ---", class: "content__field--label-mypage" %>
+                  <%= f.text_area :game_location, class: "form-control content__field--form-game_location" %>
+                </div>
+              </div>
+            
+            
+              <div class="content__fields--flex-item-mypage2">
+                 <table class="table ">
+                 <h3>My Event</h3>
+                 <p>イベントを作ろう</p>
                   <tr>
-                    <th scope="row">イベント写真</th>
+                    <th class="content__profile">イベント名</th>
+                    <td><%= f.text_field :event_name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
                   </tr>
                   <tr>
-                    <th scope="row">イベント名</th>
-                    <td class="nomal-font font-sm"><%= f.text_field :event_name, autofocus: true, autocomplete: "event_name", class:"create-event-form" %></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">イベント日</th>
-                    <td class="nomal-font font-sm"><span class="event__area--supplement">＊&emsp;日付を選択してください</span></br><%= f.date_field :event_data, autocomplete: "event_data", class:"create-event-form" %></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">開催時間〜終了時間</th>
-                    <td class="nomal-font font-sm">
-                      <span class="event__area--supplement">＊&emsp;時間を選択してください</span></br>
-                      <%= f.time_field :starting_time, autocomplete: "start_time", class:"create-event-form--time" %>
-                      &emsp;ーー&emsp;
-                      <%= f.time_field :ending_time, autocomplete: "finish_time", class:"create-event-form--time" %>
+                    <th class="content__profile">開催予定</th>
+                    <td>
+                      <%= f.radio_button :sex, false, checked: true %>オンライン
+                      <%= f.radio_button :sex, true %>オフライン
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">料金</th>
-                    <td class="nomal-font"><%= f.text_field :place, autocomplete: "place", class:"create-event-textarea", placeholder: "" %>円</td>
+                    <th class="content__profile">イベント日</th>
+                    <td>
+                      <span class="event__area--supplement">＊&emsp;開催日</span></br>
+                      <%= f.date_field :event_data, autocomplete: "event_data", class: "form-control" %>
+                    </td>
                   </tr>
                   <tr>
-                    <th scope="row">開催予定場所</th>
-                    <td class="nomal-font"><%= f.text_area :game_location, autocomplete: "game_location", class:"create-event-textarea", placeholder: "開催場所を記入" %></td>
+                    <th class="content__profile">開始時間</th>
+                    <td>
+                      <span class="event__area--supplement">＊&emsp;開始時間</span></br>
+                      <%= f.time_field :starting_time, autocomplete: "start_time", class: "form-control event-new" %>
+                    </td>
                   </tr>
-                </tbody>
-              </table>
-              <div class="actions"> 
-                <%= f.submit "イベント更新", class: "btn btn-success" %>
-              </div> 
-            <% end %>
-          </div>
+                  <tr>
+                    <th class="content__profile">終了時間</th>
+                    <td>
+                      <span class="event__area--supplement">＊&emsp;終了時間</span></br>
+                      <%= f.time_field :ending_time, autocomplete: "finish_time", class: "form-control event-new" %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="content__profile">料金</th>
+                    
+                    <td>
+                     <%= f.text_field :place, autocomplete: "place", class: "form-control event-new", placeholder: "1000" %>円
+                    </td>
+                  </tr>
+                </table>
+                <div class="content__field--button">
+                  <%= f.submit "イベント更新！", class: "mypage-button btn btn-success"%>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

@@ -2,9 +2,7 @@ class UsersController < ApplicationController
   
   before_action :ensure_correct_user, only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update]
-  
-  def index
-  end
+  before_action :check_guest, only: [:update]
   
   def show
   end
@@ -39,6 +37,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if current_user.id != @user.id
       redirect_back(fallback_location: root_path)
+    end
+  end
+  
+  def check_guest
+    if current_user.email == 'guest@example.com'
+      flash[:danger] = "ゲストユーザーのため編集できません"
+      redirect_to user_path(current_user)
     end
   end
   
