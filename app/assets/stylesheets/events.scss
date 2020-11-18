@@ -1,5 +1,6 @@
 .content__fields--calendar {
     background: white;
+    border: solid 8px #79a2ce;
 }
 
 
@@ -11,3 +12,7 @@
 .event__area--supplement {
   margin-bottom :10px;
 } 
+
+.card {
+    border: solid 5px #79a2ce!important;
+}

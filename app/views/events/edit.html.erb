@@ -45,7 +45,7 @@
                     <th class="content__profile">イベント日</th>
                     <td>
                       <span class="event__area--supplement">＊&emsp;開催日</span></br>
-                      <%= f.date_field :event_data, autocomplete: "event_data", class: "form-control" %>
+                      <%= f.date_field :event_date, autocomplete: "event_date", class: "form-control" %>
                     </td>
                   </tr>
                   <tr>
@@ -66,7 +66,7 @@
                     <th class="content__profile">料金</th>
                     
                     <td>
-                     <%= f.text_field :place, autocomplete: "place", class: "form-control event-new", placeholder: "1000" %>円
+                     <%= f.text_field :price, autocomplete: "place", class: "form-control event-new", placeholder: "1000" %>円
                     </td>
                   </tr>
                 </table>

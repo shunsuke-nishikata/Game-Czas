@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     @request_events = Event.joins(:requests)
                            .where(requests: { user_id: current_user.id })
 
-    @today_events = @request_events.where(event_data: from..to)
+    @today_events = @request_events.where(event_date: from..to)
     # binding.pry
   end
   
@@ -41,6 +41,7 @@ class EventsController < ApplicationController
   
   def update
     @event.update(event_params)
+    # binding.pry
     redirect_to event_path(@event)
   end
   
@@ -57,6 +58,6 @@ class EventsController < ApplicationController
   end
   
   def event_params
-    params.permit(:event_image,:event_name,:event_data,:starting_time,:ending_time,:game_location,:place,:is_request)
+    params.require(:event).permit(:event_image,:event_name,:event_data,:starting_time,:ending_time,:game_location,:price,:is_request)
   end
 end

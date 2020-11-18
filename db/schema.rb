@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_083516) do
+ActiveRecord::Schema.define(version: 2020_11_18_095508) do
 
   create_table "entries", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 2020_11_17_083516) do
     t.integer "user_id", null: false
     t.string "event_image_id"
     t.string "event_name"
-    t.datetime "event_data"
+    t.datetime "event_date"
     t.datetime "starting_time"
     t.datetime "ending_time"
     t.string "game_location"
-    t.integer "place"
+    t.integer "price"
     t.boolean "is_request", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,6 +54,20 @@ ActiveRecord::Schema.define(version: 2020_11_17_083516) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "visitor_id", null: false
+    t.integer "visited_id", null: false
+    t.integer "event_id"
+    t.integer "event_comment_id"
+    t.integer "room_id"
+    t.integer "message_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "request_id"
   end
 
   create_table "relationships", force: :cascade do |t|

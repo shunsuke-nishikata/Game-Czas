@@ -13,7 +13,7 @@
     <% else %>
       <div class="heading">
   <!--自分の詳細ページか他のユーザーの詳細ページかで表示を変える-->
-        <h3 class="heading__title--main"><%= @user.name %> Profile ++</h3>
+        <h3 class="heading__title--main">Profile ++</h3>
         <h3 class="heading__title--en"><%= @user.name %>の詳細ページ</h3>
       </div>
       <div class="heading__border">
@@ -29,7 +29,7 @@
             <h2 class="content__fields--heading"><%= @user.name %> Profile</h2>
           <% end %>
           <div class="content__fields--flex">
-            <div class="content__fields--flex-item-mypage1">
+            <div class="content__fields--flex-item-mypage1-user">
               <div class="content__image--user">
                 <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
               </div>
@@ -53,7 +53,7 @@
                 </tr>
               </table>
             </div>
-            <div class="content__fields--flex-item-mypage2">
+            <div class="content__fields--flex-item-mypage2-user">
               <table class="table">
                 <h3>Profile</h3>
                 <tr>
@@ -73,7 +73,7 @@
                   <td><%= @user.age %></td>
                 </tr>
                 <tr>
-                  <th class="content__profile">よくやるゲーム</th>
+                  <th class="content__profile">好きなゲーム</th>
                   <td><%= @user.favorite_game %></td>
                 </tr>
                 <tr>

@@ -5,6 +5,8 @@ class LikesController < ApplicationController
     like = Like.new(event_id: event.id)
     like.user_id = current_user.id
     like.save
+    # 通知作成
+    event.create_notification_like(current_user)
     redirect_back(fallback_location: root_path)
   end
   

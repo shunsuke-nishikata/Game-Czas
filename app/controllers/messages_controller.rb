@@ -6,6 +6,8 @@ class MessagesController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  def index
+  end
   
   private
   

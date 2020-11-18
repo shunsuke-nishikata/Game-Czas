@@ -24,6 +24,6 @@ Rails.application.routes.draw do
     get 'user/search' => 'search#search_users'
     
   resources :rooms, only: [:index, :show]
-  resources :messages, only: [:create]
+  resources :messages, only: [:create, :index]
   resources :notifications, only: [:index]
 end
