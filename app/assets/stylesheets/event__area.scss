@@ -13,6 +13,7 @@
 .event__area {
     background: white;
     padding: 5%;
+    border: solid 8px #79a2ce;
     
     &--supplement {
       margin-bottom :10px;
@@ -34,6 +35,7 @@ input.btn.btn-primary.card-bosy__button {
 .event__area--comments {
     background: white;
     padding: 5%;
+    border: solid 8px #79a2ce;
 }
 
 .event__area--likes {

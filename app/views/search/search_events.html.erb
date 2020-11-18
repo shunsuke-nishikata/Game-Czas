@@ -36,11 +36,11 @@
                         <% end %>
                       </td>
                       <td class="content__fields--matching-users">
-                        <%= link_to "イベント詳細", event_path(event.id), class: "btn btn-success" %>
+                        <%= link_to "ｲﾍﾞﾝﾄ詳細", event_path(event.id), class: "btn btn-success" %>
                       </td>
-                      <td class="content__fields--matching-users"><%= event.place %></td>
+                      <td class="content__fields--matching-users"><%= event.price %></td>
                       <td class="content__fields--matching-users"><%= event.event_name %></td>
-                      <td class="content__fields--matching-users"><%= event.event_data.to_s(:date_jp)%></td>
+                      <td class="content__fields--matching-users"><%= event.event_date.to_s(:date_jp)%></td>
                       <td class="content__fields--matching-users">
                         <%= event.starting_time.to_s(:time) %> ~ 
                       </td>
@@ -70,6 +70,9 @@
                   </tbody>
                 </table>
               <% end %>
+            </div>
+            <div class="col-xs-12 text-center">
+              <%= paginate @search_events%>
             </div>
           </div>
         </div>

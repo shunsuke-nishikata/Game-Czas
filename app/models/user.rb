@@ -30,6 +30,10 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
   
+  # 自分からの通知
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  # 相手からの通知
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
   
   def follow(user_id)
     relationship = relationships.new(followed_id: user_id)
@@ -53,7 +57,8 @@ class User < ApplicationRecord
     if search_word
       User.where('name LIKE ?', '%' + search_word + '%')
     else
-      User.where.not(id: current_user.id)
+      @search_users = User.where.not(id: current_user.id)
+      @search_users = User.page(params[:page]).per(8)
     end
   end
   
@@ -62,6 +67,18 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲストユーザー"
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
+  
+  # フォロー用の通知機能
+  def create_notification_follow(current_user)
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
+    if temp.blank?
+      notification = current_user.active_notifications.new(
+        visited_id: id,
+        action: 'follow'
+      )
+      notification.save 
     end
   end
 end

@@ -55,7 +55,7 @@
                   <tr>
                     <th class="content__profile">イベント日</th>
                     <td>
-                      <%= @event.event_data.to_s(:date_jp) %>
+                      <%= @event.event_date.to_s(:date_jp) %>
                     </td>
                   </tr>
                   <tr>
@@ -68,7 +68,7 @@
                   </tr>
                   <tr>
                     <th class="content__profile">料金</th>
-                    <td><%= @event.place %>円</td>
+                    <td><%= @event.price %>円</td>
                   </tr>
                 </table>
               </div>

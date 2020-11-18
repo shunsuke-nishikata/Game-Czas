@@ -7,7 +7,7 @@
     <div class="card-body">
       <h5 class="card-title">-- <%= event.event_name %> --</h5>
       <p class="card-text">
-        <%= event.event_data.to_s(:date_jp) %></br> 
+        <%= event.event_date.to_s(:date_jp) %></br> 
         <i class="far fa-clock"></i>
         <%= event.starting_time.to_s(:time) %>
         <span>~</span>
