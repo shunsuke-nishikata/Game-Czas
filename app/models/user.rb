@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :event_comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  
+  has_many :requests, dependent: :destroy
   
   # class_nameによって参照するテーブルを指定
   # foreign_keyにより、relationshipsテーブルのどのカラムを参照するのかを指定

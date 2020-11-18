@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_030007) do
+ActiveRecord::Schema.define(version: 2020_11_17_083516) do
 
   create_table "entries", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 2020_11_15_030007) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

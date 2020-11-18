@@ -31,14 +31,10 @@
       </p>
       <div class="card-bosy__buttons">
         <% if event.user != current_user %>
-          <%= form_with model: event, url: event_path(event), local: true do |f| %>
-            <% if event.is_request == false %>
-              <%= f.hidden_field :is_request, value: true %>
-              <%= f.submit "お気に入り！", class: "btn btn-primary card-bosy__button" %>
-            <% else %>
-              <%= f.hidden_field :is_request, value: false %>
-              <%= f.submit "お気に入り済み", class: "btn btn-primary card-bosy__button" %>
-            <% end %>
+          <% if event.requests_by?(current_user) %>
+            <%= link_to "リクエスト済み", event_request_path(event.id, event.requests),method: :delete, class: "btn btn-primary request-button" %></br>
+          <% else %>
+            <%= link_to "リクエスト!!", event_requests_path(event.id),method: :post, class: "btn btn-primary request-button" %></br>
           <% end %>
           <%= link_to "イベント詳細", event_path(event.id), class: "btn btn-success" %>
         <% else %>

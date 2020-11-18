@@ -25,18 +25,16 @@
           <div class="content__fields--flex">
           <!--今日のイベントがnilの場合の条件分岐-->
           <% if @today_events.present? %>
-            <h3 style="color:white;">予定のイベントはありません</h3>
-          <% else %>
             <% @today_events.each do |event_today| %>
-              <% if event_today.is_request == true %>
                 <%= event_today.event_name %>
-              <% end %>
             <% end %>
+          <% else %>
+            <h3 style="color:white;">予定のイベントはありません</h3>
           <% end %>
           </div>
         </div>
       
-       <%= render 'layouts/calendar', events: @events %>
+       <%= render 'layouts/calendar', events: @request_events %>
       </div>
     </div>
   </div>

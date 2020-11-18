@@ -7,13 +7,23 @@ class EventsController < ApplicationController
     @events = Event.where.not(user_id: current_user.id)
     @new_events  = Event.page(params[:page]).per(8)
     # @new_events  = Event.all.shuffle.take(8)
-    @today_events = Event.where(is_request: true, user_id: current_user.id)
-    # from = Time.current.beginning_of_day
-    # to = Time.current.end_of_day
-    # @today_events = Event.where.not(is_request: false, user_id: current_user.id).find(date: from..to)
+    
+    
+    from = Time.current.beginning_of_day
+    to = Time.current.end_of_day
+    # today_event = Event.find()
+    # @today_events = Event.find(requests).where(event_data: from..to)
+    
+    # 自分がリクエストを出したイベントを取得する
+    # requests = Request.where(user_id: current_user.id).pluck(:event_id)
+    @request_events = Event.joins(:requests)
+                           .where(requests: { user_id: current_user.id })
+
+    @today_events = @request_events.where(event_data: from..to)
+    # binding.pry
   end
   
-  def new
+  def news
     @event = Event.new
   end
   
@@ -31,7 +41,7 @@ class EventsController < ApplicationController
   
   def update
     @event.update(event_params)
-    redirect_back(fallback_location: root_path)
+    redirect_to event_path(@event)
   end
   
   def destroy
@@ -47,6 +57,6 @@ class EventsController < ApplicationController
   end
   
   def event_params
-    params.require(:event).permit(:event_image,:event_name,:event_data,:starting_time,:ending_time,:game_location,:place,:is_request)
+    params.permit(:event_image,:event_name,:event_data,:starting_time,:ending_time,:game_location,:place,:is_request)
   end
 end

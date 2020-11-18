@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   
-  resources :users, only: [:index,:edit, :update, :show] do
+  resources :users, only: [:edit, :update, :show] do
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :event_comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
+    resources :requests, only: [:create, :destroy]
   end
     get 'event/search' => 'search#search_events'
     get 'user/search' => 'search#search_users'
