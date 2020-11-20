@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
   
-  before_action :matching_membar, only: :show
   
   def index
   end
@@ -15,8 +14,8 @@ class RoomsController < ApplicationController
     # メッセージする相手のユーザーのIDとroom_id上記roomsに一致しているレコードを取り出す
     # すでにメッセージをしたことがあるかの確認のため
     entry = Entry.find_by(user_id: @user.id, room_id: rooms )
-    
     # 自分とメッセージをする相手のentry情報がない場合のif文
+   
     if entry.nil?
       @room = Room.create
       # 自分のentryテーブル作成
@@ -33,15 +32,8 @@ class RoomsController < ApplicationController
     @message = Message.new(room_id: @room.id)
     # 自分と相手の部屋のメッセージ全て
     @messages = @room.messages
-    # binding.pry
-  end
-  
-  private
-  
-  def matching_membar
-    User.find(params[:id])
-  # user.rbで定義したmatchingメソッドを使用し相互フォローしたユーザー取得
-    current_user.matching
+    # session[:user_id] = @user.id
+    
   end
   
 end

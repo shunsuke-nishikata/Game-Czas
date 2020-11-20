@@ -11,8 +11,8 @@
           <div class='col-xs-9 notification__message'>
             <div class="notification-text">
               <%= notification.visitor.name %>
-              <p class="text-muted"><%= Message.find_by(id: notification.message_id).message%>
-                <%= link_to room_path(notification.room_id) do %>
+              <p class="text-muted"><%= Message.find_by(id: notification.message_id).message %>
+                <%= link_to room_path(notification.visitor) do %>
                   <i class="fas fa-comments"></i>
                 <% end %>
               </p>

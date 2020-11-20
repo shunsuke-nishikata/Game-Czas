@@ -1,0 +1,4 @@
+<!--ボタンの切り替えの非同期処理-->
+$('#request-button<%= @event.id %>').html("<%= j(render partial: 'requests/request', locals: {event: @event}) %>");
+<!--カレンダー内データの非同期処理-->
+$('#calendar__content<%= @event.id %>').html("<%= j(render partial: 'requests/request_date', locals: {event: @event}) %>");
