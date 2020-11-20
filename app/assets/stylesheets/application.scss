@@ -29,7 +29,7 @@
 img.attachment.user.image {
     border-radius: 50%;
     display: inline-block;
-    margin-top: 10px;
+    border: solid 3px #79a2ce;
 }
 
 .fa-twitter{color:#1da1f2;margin-right: 10px;}
@@ -38,23 +38,6 @@ img.attachment.user.image {
 
 .no-message {
     height: 400px;
-}
-
-
-.search {
-    text-align: right;
-}
-
-.search-form {
-    margin-bottom: 30px;
-    padding: 2%;
-    background: #303E4D;
-    display: inline-block;
-    border-radius: 50px;
-}
-
-input#search_word {
-    height: 35px;
 }
 
 button.aaa {
@@ -67,4 +50,15 @@ td.content__fields--matching-users {
     width: 120px;
 }
 
+
+footer.top-footer {
+    background: #45668a;
+    color: white;
+}
+
+i.fas.fa-share {
+    width: 20px;
+    color: #45668a;
+    font-size: 25px;
+}
 

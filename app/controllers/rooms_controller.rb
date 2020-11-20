@@ -39,9 +39,9 @@ class RoomsController < ApplicationController
   private
   
   def matching_membar
-   user = User.find(params[:id])
+    User.find(params[:id])
   # user.rbで定義したmatchingメソッドを使用し相互フォローしたユーザー取得
-   members = current_user.matching
+    current_user.matching
   end
   
 end

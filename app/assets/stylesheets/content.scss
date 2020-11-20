@@ -159,10 +159,15 @@ textarea#user_introduction {
 
 .content__fields--block {
     padding: 5%;
+    border: solid 8px #79a2ce;
 }
 
 .content__fields--message-form {
     margin: 30px;
+}
+
+.content__fields--message {
+    display: inline-block;
 }
 
 .content__fields--notification {

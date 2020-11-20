@@ -37,7 +37,8 @@ class User < ApplicationRecord
   
   def follow(user_id)
     relationship = relationships.new(followed_id: user_id)
-    relationship.save
+    relationship.save!
+    self
   end
 
   def unfollow(user_id)

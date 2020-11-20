@@ -48,9 +48,11 @@
                     <td><%= @event.event_name %></td>
                   <tr>
                     <th class="content__profile">開催予定</th>
-                    <td>
-                      オフライン
-                    </td>
+                    <% if @event.is_online == true %>
+                      <td>オンライン開催</td>
+                    <% else %>
+                      <td>オフライン開催</td>
+                    <% end %>
                   </tr>
                   <tr>
                     <th class="content__profile">イベント日</th>

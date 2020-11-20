@@ -16,16 +16,13 @@
           <h2 class="content__fields--heading">My Notifications</h2>
           <div class="content__fields--flex">
             <div class="content__fields--notification">
-              <%# notifications = @notifications.where.not(visitor_id: current_user.id) %>
+             <!--自分からの通知は受け取らない-->
+             <%# notifications = @notifications.where.not(visited_id: current_user.id) %>
               <% if @notifications.exists? %>
                 <%= render 'notifications', notifications: @notifications %>
-                <%= paginate @notifications %>
               <% else %>
                 <p>現在通知はありません</p>
               <% end %>
-            </div>
-            <div class="col-xs-12 text-center">
-              <%= paginate @notifications%>
             </div>
           </div>
         </div>
