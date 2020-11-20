@@ -12,30 +12,19 @@
         <%= event.starting_time.to_s(:time) %>
         <span>~</span>
         <%= event.ending_time.to_s(:time) %></br>
-        <%= link_to event_likes_path(event.id) do %>
+        <%= link_to event_path(event.id) do %>
           <i class="far fa-comments" style="color: black;"></i>
         <% end %>
         <%= event.event_comments.count%>
-<!--いいね領域-->
-        <% if event.likes_by?(current_user) %>
-          <%= link_to event_like_path(event.id, event.likes), method: :delete do %>
-            <i class="fas fa-heart" style="color: #d7c447;"></i>
-          <% end %>
-          <%= event.likes.count %> 
-        <% else %>
-          <%= link_to event_likes_path(event.id), method: :post do %>
-            <i class="far fa-heart" style="color: black;"></i>
-          <% end %>
-          <%= event.likes.count %> 
-        <% end %>
+        <span id="event__area--likes_<%= event.id %>">
+          <%= render partial: 'likes/like', locals: {event: event} %>
+        </span>
       </p>
-      <div class="card-bosy__buttons">
+      <div class="card-body__buttons">
         <% if event.user != current_user %>
-          <% if event.requests_by?(current_user) %>
-            <%= link_to "リクエスト済み", event_request_path(event.id, event.requests),method: :delete, class: "btn btn-primary request-button" %></br>
-          <% else %>
-            <%= link_to "リクエスト!!", event_requests_path(event.id),method: :post, class: "btn btn-primary request-button" %></br>
-          <% end %>
+          <div id="request-button<%= event.id %>">
+            <%= render partial: 'requests/request', locals: {event: event} %>
+          </div>
           <%= link_to "イベント詳細", event_path(event.id), class: "btn btn-success" %>
         <% else %>
           <%= link_to "My Event", event_path(event.id), class: "btn btn-info" %>

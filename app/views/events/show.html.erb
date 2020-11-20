@@ -28,6 +28,13 @@
                 <div class="content__image--user">
                   <%= attachment_image_tag @event.user, :image, format: 'jpeg' , size: "250x250"%>
                 </div>
+                <span id="event__area--likes_<%= @event.id %>">
+                  <%= render partial: 'likes/like', locals: {event: @event} %>
+                </span>
+                <span>
+                  <i class="far fa-comments" style="color: black;"></i>
+                  <%= @event.event_comments.count %>
+                </span>
               　<table class="table table-bordered ">
                 <tr>
                   <th class="content__profile">--- イベントメモ ---</th>
@@ -43,6 +50,7 @@
                  <table class="table ">
                  <h3>My Event</h3>
                  <p>イベント詳細</p>
+                  
                   <tr>
                     <th class="content__profile">イベント名</th>
                     <td><%= @event.event_name %></td>
@@ -126,22 +134,6 @@
                 </div>
               </li>
             <% end %>
-            <div class="event__area--likes">
-              <% if @event.likes_by?(current_user) %>
-                <%= link_to event_like_path(@event), method: :delete do %>
-                  <i class="fas fa-heart" style="color: #d7c447;"></i>
-                <% end %>
-                <%= @event.likes.count %> いいね
-              <% else %>
-                <%= link_to event_likes_path(@event), method: :post do %>
-                  <i class="far fa-heart" style="color: black;"></i>
-                <% end %>
-                <%= @event.likes.count %> いいね
-              <% end %>
-              <i class="far fa-comments" style="color: black;"></i>
-              <%= @event.event_comments.count %>コメント
-            </div>
-<!--コメントフォーム領域-->
             <%= form_with(model:[@event, @event_comment],url:  event_event_comments_path(@event), local: true) do |f| %>
               <div class="row">
                 <div class="col-sm-12">
