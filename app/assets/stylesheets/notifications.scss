@@ -2,16 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .notification-border {
-    border-bottom: solid 1px #6c757d ;
+    border-bottom: solid 1px #dfdfdf;
     margin-top: 5px;
 }
 
-.col-xs-9.d-flex.align-items-center.notification-text {
+.col-xs-9.d-flex.align-items-center.notification__text-area {
     margin-left: 30px;
+}
+
+p.text-muted {
+    text-align: left;
 }
 
 i.fa.fa-circle {
     position: absolute!important;
-    padding-left: 180px!important;
+    padding-left: 175px!important;
     padding-top: 350px!important;
+}
+
+i.fas.fa-comment-dots {
+    position: absolute !important;
+    padding-left: 180px;
+    padding-top: 65px;
+}
+
+.notification__message {
+    margin: 20px 0 0 30px;
 }
