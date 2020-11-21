@@ -47,10 +47,15 @@
             
             
               <div class="content__fields--flex-item-mypage2">
-                 <table class="table ">
-                 <h3>My Event</h3>
-                 <p>イベント詳細</p>
-                  
+                <table class="table ">
+                  <% if @event.user == current_user %>
+                   <h3>My Event</h3>
+                   <p>イベント詳細</p>
+                  <% else %>
+                    <h3>Event</h3>
+                    <p>イベント詳細</p>
+                  <% end %>
+                
                   <tr>
                     <th class="content__profile">イベント名</th>
                     <td><%= @event.event_name %></td>
