@@ -1,0 +1,5 @@
+<!--詳細ページ-->
+$(".content__field--follow").html("<%= j(render partial: 'users/follow_button', locals: {user: @user}) %>");
+
+<!--マッチングページ-->
+$("#matching_follow_button<%= @user.id %>").html("<%= j(render partial: 'users/follow_matching', locals: {friend: @user}) %>");

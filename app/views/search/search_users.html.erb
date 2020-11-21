@@ -41,13 +41,9 @@
                       <% end %>
                       </td>
                         <td class="content__fields--matching-users">
-                        <% if user.id != current_user.id %>
-                          <% if current_user.following?(user) %>
-                            <%= link_to "ﾌｫﾛｰ外す", user_relationships_path(user), method: :delete, class: "btn btn-primary" %>
-                          <% else %>
-                            <%= link_to "ﾌｫﾛｰする", user_relationships_path(user), method: :post, class: "btn btn-success" %>
-                          <% end %>
-                        <% end %>
+                          <div id="matching_follow_button<%= user.id %>">
+                            <%= render partial: 'users/follow_matching', locals: {friend: user} %>
+                          </div>
                         </td>
                       <td class="content__fields--matching-users"><%= user.name %></td>
                       <td class="content__fields--matching-users"><%= user.age %></td>

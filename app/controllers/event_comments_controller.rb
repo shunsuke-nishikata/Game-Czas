@@ -17,6 +17,8 @@ class EventCommentsController < ApplicationController
   def destroy
     # 削除対象→どのイベントのどのコメントか
     # コメントのIDとイベントのIDを取得
+    event = Event.find(params[:event_id])
+    @event_comments = event.event_comments
     @event_comment = EventComment.find_by(id: params[:id], event_id: params[:event_id])
     @event_comment.destroy
    
