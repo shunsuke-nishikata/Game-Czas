@@ -24,7 +24,7 @@
                       <th>名前</th>
                       <th>年齢</th>
                       <th>性別</th>
-                      <th>よくやるゲーム</th>
+                      <!--<th>よくやるゲーム</th>-->
                       <th>SNS</th>
                     </tr>
                   </thead>
@@ -52,7 +52,7 @@
                       <% else %>
                         <td class="content__fields--matching-users">男性</td>
                       <% end %>
-                      <td class="content__fields--matching-users"><%= friend.favorite_game %></td>
+                      <!--<td class="content__fields--matching-users"><%#= friend.favorite_game %></td>-->
                       <td class="content__fields--matching-users">
                          <% if friend.twitter.present? %>
                             <%= link_to friend.twitter, target: :_blank do %>

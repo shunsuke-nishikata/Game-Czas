@@ -7,12 +7,15 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
     attributes:
-      product:
-        image: 商品画像
-        name: 商品名
-        description: 商品説明
-        price: 税抜価格
-        genre_id: ジャンル
+      event:
+        event_name: イベントの名前
+        event_date: 開催日
+        starting_time: 開始時間
+        ending_time: 終了時間
+        game_location: イベントメモ
+      user:
+        name: 名前
+        email: メールアドレス
   date:
     abbr_day_names:
     - 日

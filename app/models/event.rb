@@ -6,6 +6,13 @@ class Event < ApplicationRecord
   has_many :requests, dependent: :destroy
   has_many :notifications, dependent: :destroy
   
+  with_options presence: true do
+    validates :event_name
+    validates :event_date
+    validates :starting_time
+    validates :ending_time
+    validates :game_location
+  end
   
   # 引数で渡されたユーザーIDがlikesテーブル内に存在するかどうか調べるメソッド
   # いいねの重複を防ぐ

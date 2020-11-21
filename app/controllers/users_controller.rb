@@ -11,8 +11,12 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user.update(user_params)
-    redirect_to user_path(current_user.id)
+    if @user.update(user_params)
+      flash[:notice] = "Profileを更新しました！"
+      redirect_to user_path(current_user.id)
+    else
+      render :edit
+    end
   end
   
   def favorite_events

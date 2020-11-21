@@ -1,0 +1,13 @@
+<div class="col-xs-12 col-xs-offset-3">
+  <div class="col-xs-4 ">
+    <% if error.errors.any? %>
+      <div class="alert alert-warning">
+        <ul>
+          <% error.errors.full_messages.each do |message| %>
+            <li class="errors__area"><%= message %></li> 
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

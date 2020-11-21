@@ -12,6 +12,11 @@
     <%if user_signed_in? %>
       <header></header>
     <% end %>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
     <footer></footer>
   </body>
