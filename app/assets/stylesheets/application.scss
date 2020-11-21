@@ -32,6 +32,10 @@ img.attachment.user.image {
     border: solid 3px #79a2ce;
 }
 
+li.errors__area {
+    list-style: none;
+}
+
 .fa-twitter{color:#1da1f2;margin-right: 10px;}
 .fa-instagram{color:#b6007a;margin-right: 10px;}
 .fa-youtube{color:#e1306c;}
@@ -54,11 +58,5 @@ td.content__fields--matching-users {
 footer.top-footer {
     background: #45668a;
     color: white;
-}
-
-i.fas.fa-share {
-    width: 20px;
-    color: #45668a;
-    font-size: 25px;
 }
 

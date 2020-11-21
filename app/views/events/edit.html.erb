@@ -14,6 +14,7 @@
         <div class="content__fields">
           <h2 class="content__fields--heading">My Event</h2>
           <%= form_with model: @event, url: event_path(@event), local: true do |f| %>
+            <%= render 'layouts/error', error: @event %>
             <div class="content__fields--flex">
               <div class="content__fields--flex-item-mypage1">
                 <div class="content__image--user">

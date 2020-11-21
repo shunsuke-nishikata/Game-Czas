@@ -23,26 +23,33 @@ class EventsController < ApplicationController
     # binding.pry
   end
   
-  def news
+  def new
     @event = Event.new
   end
   
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
-    @event.save
-    # イベント詳細ページへ
-    redirect_to event_path(@event.id)
+    if @event.save
+      flash[:notice] = "イベントを作成しました！"
+      redirect_to event_path(@event.id)
+    else
+      render :new
+    end
   end
   
   def show
     @event_comment = EventComment.new
+    @event_comments = @event.event_comments
   end
   
   def update
-    @event.update(event_params)
-    # binding.pry
-    redirect_to event_path(@event)
+    if @event.update(event_params)
+      flash[:notice] = "イベントを内容を更新しました！"
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end
   end
   
   def destroy
