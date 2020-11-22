@@ -138,6 +138,10 @@ th.content__profile {
 
 .content__fields--matching-users {
   line-height: 80px;
+  width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 // ユーザー編集画面の自己紹介フォーム
@@ -160,6 +164,8 @@ textarea#user_introduction {
 .content__fields--block {
     padding: 5%;
     border: solid 8px #79a2ce;
+    overflow: scroll;
+    height: 700px;
 }
 
 .content__fields--message-form {

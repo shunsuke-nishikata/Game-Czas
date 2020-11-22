@@ -1,43 +1,70 @@
  <div class="sidebar">
     <div class="sidebar__logo">
-       <h3 class="sidebar__logo--headding" style="color:white;">welcome to Game-Czas</h3>
+       <h3 class="sidebar__logo--headding" style="color:white;"><%= image_tag 'game-czas.png' , class: "game-czas-logo"%><br></h3>
+       <h3  style="color:white;">welcome to Game-Czas</h3>
        <div class="sidebar__logo--icon-field">
-         <%= link_to  user_path(current_user) do %>
-           <%= attachment_image_tag current_user, :image, format: 'jpeg' , size: "60x60", class: "sidebar-icon"%>
-          <% end %>
+         <div class="sidebar__icon">
+           <%= link_to  user_path(current_user) do %>
+             <%= attachment_image_tag current_user, :image, format: 'jpeg' , size: "60x60", class: "sidebar-icon"%>
+            <% end %>
+         </div>
        </div>
     </div>
     <nav>
       <ul class="nav nav-pills nav-fill flex-column sidebar__nav">
         <li class="nav-item">
-          <%= link_to "Home", events_path, class: "nav-item" %>
+          <%= link_to  events_path, class: "nav-item" do %>
+            <i class="fas fa-home " style="color: #c3c3c3"></i>
+            Home
+          <% end %>
         </li>
         <% if unchecked_notifications.any? %>
-          <i class="fas fa-comment-dots" style="color: #00ac9b;"></i>
+          <i class="fas fa-map-marker" style="color: gold;"></i>
         <% end %>
         <li class="nav-item">
-          <%= link_to "Message", messages_path, class: "nav-item" %>
+          <%= link_to  messages_path, class: "nav-item" do %>
+            <i class="fas fa-comment-dots " style="color: #c3c3c3"></i>
+            Message
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Favorite Events", favorite_events_path, class: "nav-item" %>
+          <%= link_to  favorite_events_path, class: "nav-item" do %>
+            <i class="fas fa-calendar-alt" style="color: #c3c3c3"></i>
+            Favorite Events
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Event Create", new_event_path, class: "nav-item" %>
+          <%= link_to  new_event_path, class: "nav-item"  do%>
+            <i class="fas fa-gamepad" style="color: #c3c3c3"></i>
+            Event Create
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Friend", matching_path, class: "nav-item" %>
+          <%= link_to  matching_path, class: "nav-item" do %>
+            <i class="fas fa-user-friends" style="color: #c3c3c3"></i>
+            Friend
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Page", user_path(current_user), class: "nav-item" %>
+          <%= link_to  user_path(current_user), class: "nav-item"  do%>
+            <i class="fas fa-user-cog" style="color: #c3c3c3"></i>
+            My Page
+          <% end %>
         </li>
         <% if unchecked_notifications.any? %>
-            <i class="fa fa-circle" style="color: gold;"></i>
+            <i class="fa fa-circle " style="color: gold;"></i>
         <% end %>
         <li class="nav-item">
-          <%= link_to "Notification", notifications_path, class: "nav-item" %>
+          <%= link_to  notifications_path, class: "nav-item"  do%>
+            <i class="fas fa-bell" style="color: #c3c3c3"></i>
+            Notification
+          <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+          <%= link_to  destroy_user_session_path, method: :delete, class: "nav-item"  do%>
+            <i class="fas fa-sign-out-alt" style="color: #c3c3c3"></i>
+            Sign Out
+          <% end %>
         </li>
       </ul>
     </nav>

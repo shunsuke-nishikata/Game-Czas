@@ -36,19 +36,7 @@ li.errors__area {
     list-style: none;
 }
 
-.fa-twitter{color:#1da1f2;margin-right: 10px;}
-.fa-instagram{color:#b6007a;margin-right: 10px;}
-.fa-youtube{color:#e1306c;}
 
-.no-message {
-    height: 400px;
-}
-
-button.aaa {
-    border-radius: 50%;
-    color: white;
-    background: #8fbc8f;
-}
 
 td.content__fields--matching-users {
     width: 120px;
@@ -58,5 +46,13 @@ td.content__fields--matching-users {
 footer.top-footer {
     background: #45668a;
     color: white;
+    padding: 20px;
 }
 
+
+.flash {
+    background: gray;
+    text-align: center;
+    width: 75%;
+    color: white;
+}

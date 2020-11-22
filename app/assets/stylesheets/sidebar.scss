@@ -19,10 +19,11 @@
   padding:2px;
   &:hover {
     text-decoration: none;
-    color: black;
+    color: black!important;
     background: radial-gradient(white, transparent);
   }
 }
+
 
 li.nav-item {
   margin-bottom:25px;
@@ -40,5 +41,15 @@ a.nav-item {
 }
 
 .sidebar__logo--headding {
-    margin-top: 150px;
+    margin-top: 100px;
+}
+
+.game-czas-logo {
+  height:100px;
+  border-radius: 50%;
+}
+
+img.game-czas-logo {
+  height:150px;
+  border: solid 5px orange;
 }
