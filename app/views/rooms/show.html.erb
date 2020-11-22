@@ -21,9 +21,11 @@
               <%# if @messages.present?%>
                 <% @messages.each do |message| %>
                   <% if message.user_id == current_user.id %>
-                  <div class="message<%=message.id%>">
+                  
+                  <div id="my-message<%= message.id %>">
                     <%= render partial: 'messages/message', locals: {message: message } %>
                   </div>
+                  
                   <% else %>
                     <div class="message-box__user-left">
                       <div class="message-user">

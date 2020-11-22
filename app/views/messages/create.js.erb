@@ -1,6 +1,16 @@
-$(".message<%=@message.id%>").html("<%= j(render partial: 'messages/message', locals: { message: @message }) %>")
+<!--こちらのコードでは#my-message<#= @message.id %>の要素が作成される前に呼び出しがかかるので表示ができない-->
+<!--$("#my-message<%#= @message.id %>").html("<%#= j(render partial: 'messages/message', locals: { message: @message }) %>")-->
+
+<!--デベロッパーツールのコンソールでjQuery.fn.init {}__proto__: Object(0)が表示されていた-->
+<!--オブジェクトがゼロだということ-->
+<!--.appendは末尾に指定の文字列を追加するという意味-->
+<!--.append($("<div></div>"でオブジェクトを作ってあげる-->
+<!--idとパーシャルで作成したhtmlを表示-->
+
+
+$('.content__fields--block').append($("<div></div>", {id: "#my-message<%= @message.id %>"}).html("<%= j(render partial: 'messages/message', locals: { message: @message }) %>"))
 $("input#message_message").val('')
-<!--$('div').removeClass('dm-no-content');-->
+
 
 <!--$(".message-box__user-right").append("  <div class="message-field<%#= @message.id %>">-->
 <!--                                          <p class="says-r"><%#= @message.message %></p>-->
