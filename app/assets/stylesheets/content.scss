@@ -143,6 +143,9 @@ th.content__profile {
     white-space: nowrap;
     overflow: hidden;
 }
+td.content__fields--matching-users {
+    width: 120px;
+}
 
 // ユーザー編集画面の自己紹介フォーム
 textarea#user_introduction {

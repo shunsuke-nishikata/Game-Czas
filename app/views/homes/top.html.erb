@@ -4,13 +4,11 @@
         <div class="main-visual__logo">
           <%= image_tag 'game-czas.png',class: "top-logo" %>
         </div>
-        <h3 class="main-visual__explanation">ゲーム仲間を集めよう！</h3>
-        <h3 class="main-visual__explanation--sub">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit,</br>
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+        <h3 class="main-visual__explanation">ゲームをより楽しめる世界へ</h3>
+        <h4 class="main-visual__explanation--sub">Game-Czasでゲーム仲間を集めよう</h4>
         <div class="main-visual__button-field">
-          <%= link_to "新規登録はこちら", new_user_registration_path, class: "col-xs-4 main-visual__sign-up" %>
-          <%= link_to "ログインページへ", new_user_session_path, class: "col-xs-4 main-visual__sign-in" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "col-xs-4 main-visual__sign-up" %>
+          <%= link_to "Login", new_user_session_path, class: "col-xs-4 main-visual__sign-in" %>
         </div>
         <div class="main-visual__button-field">
           <%= link_to "かんたんログイン", users_guest_sign_in_path, method: :post, class: "col-xs-4 main-visual--easy" %>
@@ -21,31 +19,78 @@
     <h1 class="about__heading">What about</h1>
     <div class="about__content">
       <div class="about-explanation">
-        <h4>Game-Chezは、「ゲームを一緒にできる人を探す」 サービスです。<br>ゲームをプレイする人なら誰でも簡単に利用できます！<br>まずは新規登録してゲーム仲間を探そう！</h4>
+        <h4>Game-Chezは、「ゲームを一緒にできる人を探す」 サービスです。<br>ゲームをプレイする人なら誰でも簡単に利用できます！<br>ログインしてゲーム仲間を探そう！</h4>
       </div>
       <div class="heading__border">
         <span class="border-title">基本的な使い方はこちらから！</span>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs12">
-            <div class="col-xs-6">
-              <h2><span class="title">Step 1 開催されているイベントチェック ！</span></h2>
+       <div class="about-2way row">
+        <div class=" col-md-6">
+          
+          <div class="about__content">
+            <p class="text-muted">Topページです<br>ログインしていただくと様々なイベントが確認できます！</p>
+            <h2><span class="title">Step 1 ゲームイベントの確認 ！</span></h2>
+            <div class="card" style="width: 100%;">
+              <%= image_tag("new-event",class: "descreption_image") %>
+              <div class="card-body">
+                <h5 class="card-title">好きなゲームイベントを探そう！</h5>
+                <p class="card-text">
+                  好みのイベントを探してゲームイベントに参加しよう！
+                  自分でゲームイベントを作成することも可能！
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
-            <div class="col-xs-6">
-              <h2><span class="title">Step 1 開催されているイベントチェック ！</span></h2>
+          </div>
+          <div class="about__content">
+            <p class="text-muted">Topページです<br>リクエストを押したイベントデータを保存します</p>
+            <h2><span  class="title">Step 3 イベントを自分のカレンダーで管理！</span></h2>
+            <div class="card" style="width: 100%;">
+              <%= image_tag("calender",class: "descreption_image") %>
+              <div class="card-body">
+                <h5 class="card-title">リクエストを送ったイベントを自分のカレンダーで管理！</h5>
+                <p class="card-text">
+                  まだ参加は決まっていないけど...
+                  そんなイベントは自分のカレンダーで一括管理しよう！
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xs-6">
-            <h2><span class="title">Step 1 開催されているイベントチェック ！</span></h2>
+        <div class=" col-md-6">
+          
+          <div class="about__content">
+           <p class="text-muted">イベントの詳細ページです<br>New Eventsの詳細ボタンから確認できます。</p>
+            <h2><span  class="title admin">Step 2 気になるイベントの詳細を確認 ！</span></h2>
+            <div class="card" style="width: 100%;">
+              <%= image_tag("event_date",class: "descreption_image") %>
+              <div class="card-body">
+                <h5 class="card-title">好きなゲームが見つかったら参加まであと少し！</h5>
+                <p class="card-text">
+                  イベントのメモや日にち、時間などを確認しよう！
+                  気になるイベントはお気に入り管理もできる！
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-6">
-            <h2><span class="title">Step 1 開催されているイベントチェック ！</span></h2>
+          <div class="about__content">
+            <p class="text-muted">DMページです<br>ユーザーの詳細画面にあるMessageボタンから遷移します</p>
+            <h2><span  class="title admin">Step 4 イベントオーナーに連絡!</span></h2>
+            <div class="card" style="width: 100%;">
+              <%= image_tag("message",class: "descreption_image") %>
+              <div class="card-body">
+                <h5 class="card-title">参加の意思を伝えよう！</h5>
+                <p class="card-text">
+                  イベントオーナーに直接メッセージ！
+                  参加方法などをやり取り！ゲームを一緒にプレイしよう！
+                </p>
+                <%= render 'layouts/modal' %>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
       <!--<div class="about-2way row">-->
       <!--  <div class="about__geme-czas col-md-12">-->
       <!--    <p class="text-muted">ユーザーページです。<br>ログインしていただくとまずは参加者側に入ります。</p>-->
