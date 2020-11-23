@@ -19,11 +19,15 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-// a:hover {
-//   text-decoration:none;
-//   color:white;
-//   opacity: 0.7;
-// }
+
+@font-face{
+    font-family: 'LogoTypeGothic';
+    src: font-url('/assets/07LogoTypeGothic7.ttf') format("truetype"); 
+}
+
+* {
+    font-family:LogoTypeGothic;
+}
 
 // 写真のCSS
 img.attachment.user.image {
@@ -37,12 +41,6 @@ li.errors__area {
 }
 
 
-
-td.content__fields--matching-users {
-    width: 120px;
-}
-
-
 footer.top-footer {
     background: #45668a;
     color: white;
@@ -51,8 +49,10 @@ footer.top-footer {
 
 
 .flash {
-    background: gray;
+    background: orange;
     text-align: center;
-    width: 75%;
+    width: 100%;
     color: white;
+    height: 50px;
+    line-height: 50px;
 }
