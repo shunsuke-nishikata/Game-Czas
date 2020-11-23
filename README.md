@@ -1,24 +1,56 @@
-# README
+# Game-Czas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+ゲームをより楽しめる世界へ
+「ゲームを一緒にできる人を探す」 サービスです。
 
-Things you may want to cover:
+### サイトテーマ
 
-* Ruby version
 
-* System dependencies
+### 主な利用シーン
+ゲームを一緒にプレイできる人を探す
+【利用】
+開催されているゲームのイベントに参加する、イベントオーナーとメッセージを交換して一緒にゲームをプレイ
+【作成】
+自分がプレイしたいゲームのイベントを作成することによりユーザー募集をかける事ができる。
+## 設計書
 
-* Configuration
+### 機能一覧
+- CRUD機能
+ - ユーザー機能イベント機能に各種CRUD機能を付与
+- メッセージ機能
+ - ユーザー同士でLineをイメージしたメッセージ交換機能
+- 通知機能
+ - フォローされた時、メッセージが届いた時、イベントにリクエストが届いた時、イベントにいいね、コメントがついた時
+ にどのユーザーから上記機能が実施されたのか通知が来る
+- いいね機能
+- コメント機能
+- 検索機能
+ - ユーザー、イベント2種類を対象にキーワードで検索が出来る
+- カレンダー機能(リクエストしたイベント内容をカレンダーに保存し管理)
+- マッチング機能(フォロー)
+- レスポンシブデザイン
+- ログイン、ログアウト機能
+- 非同期通信(メッセージ、コメント、いいね、フォロー)
+<https://docs.google.com/spreadsheets/d/1UgK-6l38k5T81XjcTIn7CHnGRkB_sBXS5xQWAVhWmks/edit#gid=0>
 
-* Database creation
+## 開発・使用技術
+#### フロントエンド
+- Bootstrap 4.5.0
+- SCSS 
+- JavaScript、jQuery、Ajax
 
-* Database initialization
+#### バックエンド
+- Ruby 2.6.3
+- Rails 5.2.4.4
 
-* How to run the test suite
+#### 開発環境
+- OS：Linux(CentOS)
+- AWS
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## その他使用技術
+- Rubocop-airbnb
+- Simple Calendar
+- かんたんログイン機能
+- チーム開発を意識したGitHubの活用 （イシュー、プルリク、マージ）
+## ER

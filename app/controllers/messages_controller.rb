@@ -1,9 +1,8 @@
 class MessagesController < ApplicationController
-  
   def create
     @message = current_user.messages.new(message_params)
     @message.save
-     
+
     room = @message.room
     # roomが同じでユーザーのidが違うものをエントリーから探す、相手のidを取得するため
     visited_room = Entry.where(room_id: room.id).where.not(user_id: current_user.id)
@@ -21,11 +20,10 @@ class MessagesController < ApplicationController
     )
     notification.save
     # @message.create_notification_message(current_user, @message.id, room.id, visited_id)
-    
+
     # redirect_back(fallback_location: root_path)
-    
   end
-  
+
   def index
     # 未確認の通知レコードを8件取得
     # その後「未確認→確認済」になるように更新
@@ -35,9 +33,9 @@ class MessagesController < ApplicationController
       notification.update_attributes(checked: true)
     end
   end
-  
+
   private
-  
+
   def message_params
     params.require(:message).permit(:message, :room_id)
   end

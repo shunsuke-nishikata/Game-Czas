@@ -23,7 +23,7 @@
           <% end %>
           <div class="event__area">
             
-             <div class="content__fields--flex">
+            <div class="content__fields--flex">
               <div class="content__fields--flex-item-mypage1">
                 <div class="content__image--user">
                   <%= attachment_image_tag @event.user, :image, format: 'jpeg' , size: "250x250"%>
@@ -36,13 +36,13 @@
                   <%= @event.event_comments.count %>
                 </span>
               　<table class="table table-bordered ">
-                <tr>
-                  <th class="content__profile">--- イベントメモ ---</th>
-                </tr>
-                <tr>
-                  <td><%= @event.game_location %></td>
-                </tr>
-              </table>
+                  <tr>
+                    <th class="content__profile">--- イベントメモ ---</th>
+                  </tr>
+                  <tr>
+                    <td><%= @event.game_location %></td>
+                  </tr>
+                </table>
               </div>
             
             
