@@ -131,26 +131,64 @@ a.col-xs-4.main-visual--easy:hover {
 // 画像（説明)
 .descreption-image{
   width:90%;
-  padding-top:4%;
-}
-.descreption-image{
-  width:90%;
+  height:100px;
   padding-top:4%;
 }
 // 見出しのマーカー
-.about__geme-czas{
-  .title {
-    background:linear-gradient(transparent 70%, #7eb6f3 0%);
-    }
-}
 span.title {
     background: linear-gradient(transparent 70%, #7eb6f3 0%);
+    font-size:25px;
 }
 // 見出しのサイズ
 @media (max-width: 767px) {
-  .about-Nomi-Joy__content, .about-Kanjino-Heya{
+  .abou__content, .about-Kanjino-Heya{
     .title {
       font-size: 0.7em;
     }
+  }
+}
+
+@media (max-width: 425px) {
+  h3.main-visual__explanation {
+    font-size: 20px;
+  }
+  h4.main-visual__explanation--sub {
+    font-size: 20px;
+  }
+  .heading__border {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    
+    margin: 0;
+  }
+  .about__content {
+    text-align: center;
+    padding: 5%; 
+    background-color: white-gray;
+  }
+  .border-title.top {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: 0px;
+    padding: 0 9px;
+    margin-left: 38px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #45668a;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+  span.title {
+    font-size: 19px;
+  }
+  img.descreption_image {
+    height: 200px;
+  }
+  p.mb-0.copyright {
+    font-size: 12px;
   }
 }

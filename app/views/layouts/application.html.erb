@@ -4,14 +4,16 @@
     <title>GameCzas</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no, maximum-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%if user_signed_in? %>
-      <header></header>
     <% end %>
+    <%= render 'layouts/header' %>
     <% if flash[:notice] %>
       <div class="flash">
         <%= flash[:notice] %>

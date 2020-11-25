@@ -7,10 +7,12 @@ class EventCommentsController < ApplicationController
     comment = current_user.event_comments.new(event_comment_params)
     # イベントIDを代入※空のインスタンスを作成した後に行う
     comment.event_id = event.id
-    comment.save
-    event.create_notification_comment(current_user, comment.id)
-
-    # redirect_to event_path(event.id)
+    if comment.save
+      event.create_notification_comment(current_user, comment.id)
+    else
+      flash[:notice] = "コメントを入力してください"
+      redirect_to event_path(event.id)
+    end
   end
 
   def destroy
