@@ -8,6 +8,7 @@
 // トップページ中央寄せ
 .container.main-visual__content {
   text-align: center;
+  margin-top: 50px;
 }
 
 .main-visual__explanation{
@@ -87,7 +88,7 @@ a.col-xs-4.main-visual--easy:hover {
   background-color: #45668a;
   color:white;
  }
- @media (max-width: 767px) {
+ @media (max-width: 768px) {
   .about__heading{
     font-size: 30px;
     }
@@ -106,7 +107,7 @@ a.col-xs-4.main-visual--easy:hover {
   display: flex;
   justify-content: space-around;
  }
- @media (max-width: 767px) {
+ @media (max-width: 768px) {
   .copyright{
     margin-top: 15px;
   }
@@ -140,7 +141,7 @@ span.title {
     font-size:25px;
 }
 // 見出しのサイズ
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .abou__content, .about-Kanjino-Heya{
     .title {
       font-size: 0.7em;

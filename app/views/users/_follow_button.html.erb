@@ -1,4 +1,3 @@
-<p>follow <%= user.followings.count %>人 &nbsp; follower<%= user.followers.count %>人</p>
 <% if user.id != current_user.id %>
   <% if current_user.following?(user) %>
     <%= link_to "フォロー外す", user_relationships_path(user), method: :delete, remote: true, class: "btn btn-primary" %>

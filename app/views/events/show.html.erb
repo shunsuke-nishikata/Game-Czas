@@ -24,9 +24,9 @@
           <div class="event__area">
             
             <div class="content__fields--flex">
-              <div class="content__fields--flex-item-mypage1">
+              <div class="content__fields--flex-item-mypage1-user">
                 <div class="content__image--user">
-                  <%= attachment_image_tag @event.user, :image, format: 'jpeg' , size: "250x250"%>
+                  <%= attachment_image_tag @event.user, :image, format: 'jpeg' , size: "250x250", class: "user-responsive" %>
                 </div>
                 <span id="event__area--likes_<%= @event.id %>">
                   <%= render partial: 'likes/like', locals: {event: @event} %>
@@ -46,7 +46,7 @@
               </div>
             
             
-              <div class="content__fields--flex-item-mypage2">
+              <div class="content__fields--flex-item-mypage2-user">
                 <table class="table ">
                   <% if @event.user == current_user %>
                    <h3>My Event</h3>
@@ -57,48 +57,70 @@
                   <% end %>
                 
                   <tr>
-                    <th class="content__profile">イベント名</th>
-                    <td><%= @event.event_name %></td>
+                    <th class="content__profile">イベント名</br>
+                      <span class="responsive-form"><%= @event.event_name %></span>
+                    </th>
+                    <td class="no-responsive-form"><%= @event.event_name %></td>
                   <tr>
-                    <th class="content__profile">開催予定</th>
+                    <th class="content__profile">開催予定</br>
+                      <span class="responsive-form">
+                        <% if @event.is_online == true %>
+                          オンライン開催
+                        <% else %>
+                          オフライン開催
+                        <% end %>
+                      </span>
+                    </th>
                     <% if @event.is_online == true %>
-                      <td>オンライン開催</td>
+                      <td class="no-responsive-form">オンライン開催</td>
                     <% else %>
-                      <td>オフライン開催</td>
+                      <td class="no-responsive-form">オフライン開催</td>
                     <% end %>
                   </tr>
                   <tr>
-                    <th class="content__profile">イベント日</th>
-                    <td>
+                    <th class="content__profile">イベント日</br>
+                      <span class="responsive-form"><%= @event.event_date.to_s(:date_jp) %></span>
+                    </th>
+                    <td class="no-responsive-form">
                       <%= @event.event_date.to_s(:date_jp) %>
                     </td>
                   </tr>
                   <tr>
-                    <th class="content__profile">開催時間〜終了時間</th>
-                    <td class="nomal-font font-sm">
+                    <th class="content__profile">開催時間〜終了時間</br>
+                      <span class="responsive-form">
+                        <%= @event.starting_time.to_s(:time)  %>
+                        &emsp;~ &emsp;
+                        <%= @event.ending_time.to_s(:time) %>
+                      </span>
+                    </th>
+                    <td class="no-responsive-form">
                       <%= @event.starting_time.to_s(:time)  %>
                       &emsp;~ &emsp;
                       <%= @event.ending_time.to_s(:time) %>
                     </td>
                   </tr>
                   <tr>
-                    <th class="content__profile">料金</th>
-                    <td><%= @event.price %>円</td>
+                    <th class="content__profile">料金</br>
+                      <span class="responsive-form">
+                        <%= @event.price %>円
+                      </span>
+                    </th>
+                    <td class="no-responsive-form"><%= @event.price %>円</td>
                   </tr>
                 </table>
               </div>
             </div>
-            <% if @event.user != current_user %>
-              <%= form_with model: @event, url: event_path(@event), local: true do |f| %>
-                <% if @event.is_request == false %>
-                  <%= f.hidden_field :is_request, value: true %>
-                  <%= f.submit "お気に入り！", class: "btn btn-primary" %>
-                <% else %>
-                  <%= f.hidden_field :is_request, value: false %>
-                  <%= f.submit "お気に入り済み", class: "btn btn-primary" %>
-                <% end %>
-              <% end %>
-            <% end %>
+            <%#if @event.user != current_user %>
+              <%#=# form_with model: @event, url: event_path(@event), local: true do |f| %>
+                <%# if @event.is_request == false %>
+                  <%#=# f.hidden_field :is_request, value: true %>
+                  <%#=# f.submit "お気に入り！", class: "btn btn-primary" %>
+                <%# else %>
+                  <%#= f.hidden_field :is_request, value: false %>
+                  <%#= f.submit "お気に入り済み", class: "btn btn-primary" %>
+                <%# end %>
+              <%# end %>
+            <%# end %>
             
             <% if @event.user == current_user %>
               <div class="event__area--buttons">

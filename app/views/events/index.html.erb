@@ -28,7 +28,7 @@
               <% @today_events.each do |event_today| %>
                 <div class="content__fields--flex-item-mypage1">
                   <div class="content__image--user">
-                    <%= attachment_image_tag event_today.user, :image, format: 'jpeg' , size: "250x250", class: "todays-image"%>
+                    <%= attachment_image_tag event_today.user, :image, format: 'jpeg' , size: "250x250", class: "user-responsive"%>
                   </div>
                   <span id="event__area--likes_<%= event_today.id %>">
                     <%= render partial: 'likes/like', locals: {event: event_today} %>
@@ -42,8 +42,8 @@
                       <th class="content__profile memo">--- イベントメモ ---</th>
                       <th class="content__profile-responsive">-イベントメモ-</th>
                     </tr>
-                    <tr>
-                      <td><%= event_today.game_location %></td>
+                    <tr class="event-memos">
+                      <td ><%= event_today.game_location %></td>
                     </tr>
                   </table>
                 </div>

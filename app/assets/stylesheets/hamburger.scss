@@ -1,0 +1,89 @@
+// .box {
+//   height: 300px;
+//   width: 90%;
+//   max-width: 600px;
+//   margin: 0 auto 50px;
+//   background-color: #eee;
+// }
+
+
+/* ---------------------------- */
+/* --- ハンバーガーアイコン --- */
+/* ---------------------------- */
+#hm-icon {
+  position: fixed;
+  right: 10px;
+  top: 5px;
+  z-index: 10;
+}
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+.menu-trigger span {
+    position: absolute;
+    left: 0;
+    width: 70%;
+    height: 3px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.menu-trigger span:nth-child(1) {
+  top: 5px;
+}
+.menu-trigger span:nth-child(2) {
+  top: 17px;
+}
+.menu-trigger span:nth-child(3) {
+  top: 29px;
+}
+.menu-trigger.active span:nth-child(1) {
+  -webkit-transform: translateY(5px) rotate(-45deg);
+  transform: translateY(5px) rotate(-45deg);
+  background-color: #fff;
+}
+.menu-trigger.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-child(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+
+
+// ハンバーガーメニューの中身
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #45668a;
+  color: #fff;
+  width: 100%;
+  // min-height: 100%;
+  display: none;
+  z-index: 9;
+}
+#sp-menu li {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+#sp-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}

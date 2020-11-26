@@ -89,3 +89,9 @@ th.days-ja {
 a.calendar__content--name {
     color: black;
 }
+
+@media (max-width: 768px){
+  h1.heading__title--main {
+    font-size: 50px;
+  }
+}

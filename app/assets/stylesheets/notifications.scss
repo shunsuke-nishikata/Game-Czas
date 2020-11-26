@@ -17,3 +17,14 @@ p.text-muted {
 .notification__message {
     margin: 20px 0 0 30px;
 }
+
+@media(max-width:425px){
+  .text-muted.text-right.font-xs.notification-time {
+    font-size: 8px;
+  }
+  .col-xs-9.d-flex.align-items-center.notification__text-area {
+  font-size: 8px;
+  margin-left: 5px;
+  text-align: left;
+  }
+}

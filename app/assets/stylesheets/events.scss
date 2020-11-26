@@ -19,12 +19,22 @@
     width: 18rem;
 }
 
+.event__area--buttons {
+    margin-top: 20px;
+}
+
 // 767以上
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   span.event__show--Responsive {
       display: none;
   }
   a.btn.btn-success.responsive-btn-typeB {
+    display: none;
+  }
+  label.content__field--label-mypage.responsive {
+    display: none;
+  }
+  h3.fields-headding__no-responsive {
     display: none;
   }
 }
@@ -37,13 +47,16 @@
     display: none;
     font-size: 12px;
   }
+  span.responsive-form {
+    display: none;
+  }
 }
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   h1.heading__title--main {
-    font-size: 50px;
+    font-size: 55px;
   }
   h3.heading__title--ja {
     margin-bottom: 30px;
@@ -51,7 +64,7 @@
   .card.content__fields--flex-item-event {
     width: 80%;
   }
-  img.attachment.user.image.todays-image {
+  img.attachment.user.image.user-responsive {
     height: 150px;
     width: 150px;
     margin: 30px 0;
@@ -71,25 +84,44 @@
   span.responsive-none {
     display: none;
   }
+  
+  // .body.body__mypage--edit {
+  //   width: 100%;
+  //   padding: 5% 8%;
+  // }
+  p.fields-headding__no-responsive {
+    display: none;
+  }
+  h3.fields-headding__no-responsive {
+    display: none;
+  }
+  span.responsive-form-title {
+    display: block;
+    font-size: 18px;
+  }
 }
+
+
 
 @media (max-width: 425px) {
   h1.heading__title--main {
-    font-size: 25px;
+    font-size: 35px;
   }
   h3.heading__title--ja {
     font-size: 18px;
   }
   .body.body__events {
     width: 100%;
+    padding: 20% 8% 5% 8%;
   }
   .sidebar {
     display: none;
   }
-  img.attachment.user.image.todays-image {
+  img.attachment.user.image.user-responsive {
     height: 100px;
     width: 100px;
   }
+  
   p.event-show {
     display: none;
   }
@@ -109,5 +141,27 @@
   a.next {
     font-size: 20px!important;
     margin: 0!important;
+  }
+  label.content__field--label-mypage.responsive {
+    font-size: 12px;
+  }
+  h3.fields-headding__responsive {
+    font-size: 20px;
+  }
+  p.fields-headding__responsive {
+    font-size: 15px;
+  }
+  td.no-responsive-form {
+    display: none;
+  }
+  .message-field {
+    font-size: 10px;
+  }
+  img.attachment.user.image.message-icon-l {
+    height: 60px;
+    width: 60px;
+  }
+  h2.content__fields--heading {
+    font-size: 25px;
   }
 } 

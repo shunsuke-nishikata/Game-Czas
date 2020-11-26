@@ -3,9 +3,8 @@
     <% if @user == current_user %>
       <div class="heading">
   <!--自分の詳細ページか他のユーザーの詳細ページかで表示を変える-->
-        <h1 class="heading__title--en"></h1>
         <h3 class="heading__title--main">My page ++</h3>
-        <h3>詳細ページ</h3>
+        <h3 class="heading__title--ja">詳細ページ</h3>
       </div>
       <div class="heading__border">
         <span class="border-title">プロフィールを充実させよう</span>
@@ -31,16 +30,18 @@
           <div class="content__fields--flex">
             <div class="content__fields--flex-item-mypage1-user">
               <div class="content__image--user">
-                <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
+                <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250", class: "user-responsive"%>
               </div>
               
               <div class="content__field--follow">
+                <p class="responsive-follow-count">follow <%= @user.followings.count %>人</br>follower<%= @user.followers.count %>人</p>
                 <%= render partial: 'follow_button', locals: {user: @user} %>
               </div>
               
               <table class="table table-bordered ">
                 <tr>
-                  <th class="content__profile">--- 自己紹介 ---</th>
+                  <th class="content__profile no-responsive">--- 自己紹介 ---</th>
+        
                 </tr>
                 <tr>
                   <td><%= @user.introduction %></td>
@@ -51,28 +52,60 @@
               <table class="table">
                 <h3>Profile</h3>
                 <tr>
-                  <th class="content__profile">名前</th>
-                  <td><%= @user.name %></td>
+                  <th class="content__profile">名前</br>
+                    <span class="responsive-form"><%= @user.name %></span>
+                  </th>
+                  <td class="no-responsive-form"><%= @user.name %></td>
                 </tr>
                 <tr>
-                  <th class="content__profile">性別</th>
-                  <% if @user.sex == true %>
-                    <td>女性</td>
-                  <% else %>
-                    <td>男性</td>
-                  <% end %>
+                  <th class="content__profile">性別</br>
+                    <span class="responsive-form">
+                      <% if @user.sex == true %>
+                        女性
+                      <% else %>
+                        男性
+                      <% end %>
+                    </span>
+                  </th>
+                    <% if @user.sex == true %>
+                      <td class="no-responsive-form">女性</td>
+                    <% else %>
+                      <td class="no-responsive-form">男性</td>
+                    <% end %>
                 </tr>
                 <tr>
-                  <th class="content__profile">年齢</th>
-                  <td><%= @user.age %></td>
+                  <th class="content__profile">年齢</br>
+                    <span class="responsive-form"><%= @user.age %></span>
+                  </th>
+                  <td class="no-responsive-form"><%= @user.age %></td>
                 </tr>
                 <tr>
-                  <th class="content__profile">好きなゲーム</th>
-                  <td><%= @user.favorite_game %></td>
+                  <th class="content__profile">好きなゲーム</br>
+                    <%= @user.favorite_game %>
+                  </th>
+                  <td class="no-responsive-form"><%= @user.favorite_game %></td>
                 </tr>
                 <tr>
-                  <th class="content__profile">SNSリンク</th>
-                  <td>
+                  <th class="content__profile">SNSリンク</br>
+                    <span class="responsive-form">
+                      <% if @user.twitter.present? %>
+                        <%= link_to @user.twitter, target: :_blank do %>
+                          <i class="fab fa-twitter"></i>
+                        <% end %>
+                      <% end %>
+                      <% if @user.instagram.present? %>
+                        <%= link_to @user.instagram, target: :_blank do %>
+                          <i class="fab fa-instagram"></i>
+                        <% end %>
+                      <% end %>
+                      <% if @user.youtube.present? %>
+                        <%= link_to @user.youtube, target: :_blank do %>
+                          <i class="fab fa-youtube"></i>
+                        <% end %>
+                      <% end %>
+                    </span>
+                  </th>
+                  <td class="no-responsive-form">
                     <% if @user.twitter.present? %>
                       <%= link_to @user.twitter, target: :_blank do %>
                         <i class="fab fa-twitter"></i>
