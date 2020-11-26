@@ -1,3 +1,86 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@media(max-width :425px){
+  .body.body__mypage {
+    width: 100%!important;
+    padding: 5% 8%;
+  }
+  .body.body__mypage--edit {
+    width: 100%!important;
+    padding: 5% 8%;
+  }
+  p.responsive-follow-count {
+    font-size: 10px;
+    margin-top: -40px;
+  }
+  .content__fields--flex-item-mypage2-user {
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 5%;
+    border: solid 8px #79a2ce;
+    margin-top: 30px;
+ }
+ .content__fields--flex-item-mypage1-user {
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 5%;
+    border: solid 8px #79a2ce;
+ }
+}
+
+
+@media(min-width :425px){
+  th.content__profile.responsive {
+    display: none;
+  }
+  h2.header-name {
+    display: none!important;
+  }
+  div#hm-icon {
+    display: none!important;
+  }
+}
+
+// 768以上ではテーブルを表示させる
+@media(min-width :768px){
+  .content__fields--flex-item-mypage1-user.friend {
+    display: none;
+  }
+
+}
+
+@media(max-width :768px){
+  .body.body__mypage {
+    width: 75%;
+    padding: 20% 8% 5% 8%;
+  }
+  .body.body__mypage--edit {
+    width: 75%;
+    padding: 20% 8% 5% 8%;
+  }
+  .content__fields--flex-item-mypage2-user {
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 5%;
+    border: solid 8px #79a2ce;
+    margin-top: 30px;
+ }
+ .content__fields--flex-item-mypage1-user {
+    width: 100%;
+    background: white;
+    color: black;
+    padding: 5%;
+    border: solid 8px #79a2ce;
+ }
+ table.table.table-hover.no-responsive {
+    display: none;
+  }
+  p.responsive-friend-sns {
+    margin-bottom: 40px;
+  }
+  
+}

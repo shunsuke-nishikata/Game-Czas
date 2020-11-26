@@ -1,3 +1,77 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.notification-text {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+  img.attachment.user.image.message-user {
+    margin-top: 25px;
+    width: 50px;
+    height: 50px;
+  }
+  .row.my-notification {
+    flex-wrap: nowrap!important;
+  }
+  .notification-text {
+    text-align: left;
+  }
+  h3.heading__title--main {
+    font-size: 55px;
+  }
+  p.says-l {
+    font-size: 8px;
+  }
+  p.says-r {
+    font-size: 8px;
+  }
+  img.attachment.user.image.message-icon-r {
+    height: 50px;
+    width: 50px;
+    margin-top: 0;
+  }
+  img.attachment.user.image.message-icon-l {
+    height: 50px;
+    margin-top: 0;
+    width: 50px;
+  }
+}
+
+@media (max-width: 425px) {
+  .body.body__frinds {
+    width: 100%;
+    padding: 20% 8% 5% 8%;
+  }
+  h3.heading__title--main {
+    font-size: 35px;
+  }
+  p.text-muted {
+    font-size: 8px;
+    margin-bottom: 0;
+  }
+  .notification-text {
+    font-size: 8px!important;
+    margin-left: -10px!important;
+  }
+  img.attachment.user.image.message-icon-r {
+    display: none;
+  }
+  img.attachment.user.image.message-icon-l {
+    height: 30px;
+    width: 30px;
+    margin-left: -30px;
+  }
+  p.says-l {
+    font-size: 5px;
+  }
+  p.says-r {
+    font-size: 5px;
+  }
+  input#message_message {
+    width: 100%;
+  }
+  i.fas.fa-share {
+    margin: 0;
+  }
+}

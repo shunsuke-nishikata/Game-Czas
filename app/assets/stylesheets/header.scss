@@ -1,5 +1,36 @@
 // ヘッダーのレイアウトCSS
-header {
+.login_header {
+    width: 100%;
+    height:50px;
+    background:#303E4D;
+    border-bottom: 1px solid white;
+    position: fixed;
+    z-index: 10;
+    // margin-bottom:50px;
+}
+
+img.game-czas-logo-header {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 20px;
+    border: solid 3px orange;
+    margin-right: 10px;
+}
+
+.sidebar-logo {
+    color: white;
+    /* font-size: 8px; */
+    margin-top: 5px;
+}
+
+h2.header-name {
+    font-size: 20px;
+    display: inline-block;
+    color: white;
+}
+
+.logout_header{
     width: 100%;
     height:50px;
     background:#303E4D;

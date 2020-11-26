@@ -1,17 +1,68 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top header-nav">
-    <%#= link_to root_path do %><%#= image_tag("Nomi-Joy.png", class: "header-logo") %><%# end %>
-    <button class="navbar-toggler public-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li><%#= link_to root_path,class:"nav-item" do %>
-      <i class="fas fa-home public-icon"></i>&ensp;
-      Top<%# end %></li>
-      <li><%#= link_to new_user_registration_path,class:"nav-item" do %><i class="fas fa-user-plus public-icon"></i>&ensp;Sign up<%# end %></li>
-      <li><%#= link_to new_user_session_path,class:"nav-item" do %><i class="fas fa-sign-in-alt public-icon"></i>&ensp;Login<%# end %></li>
-      </ul>
-    </div>
-  </nav>
+<header class="login_header">
+  <div class="sidebar-logo">
+    <%= link_to  'javascript:history.back()' do %>
+      <h2 class="header-name"><%= image_tag 'game-czas.png' , class: "game-czas-logo-header"%>Game-Czas</h2>
+    <% end %>
+  </div>
+  <div id="sp-menu">
+    
+    <ul>
+      <li>
+        <%= link_to  events_path, class: "nav-item" do %>
+          <i class="fas fa-home " style="color: #c3c3c3"></i>
+          Home
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  messages_path, class: "nav-item" do %>
+          <i class="fas fa-comment-dots " style="color: #c3c3c3"></i>
+          Message
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  favorite_events_path, class: "nav-item" do %>
+          <i class="fas fa-calendar-alt" style="color: #c3c3c3"></i>
+          Favorite Events
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  new_event_path, class: "nav-item"  do%>
+          <i class="fas fa-gamepad" style="color: #c3c3c3"></i>
+          Event Create
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  matching_path, class: "nav-item" do %>
+          <i class="fas fa-user-friends" style="color: #c3c3c3"></i>
+          Friend
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  user_path(current_user), class: "nav-item"  do%>
+          <i class="fas fa-user-cog" style="color: #c3c3c3"></i>
+          My Page
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  notifications_path, class: "nav-item"  do%>
+          <i class="fas fa-bell" style="color: #c3c3c3"></i>
+          Notification
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  destroy_user_session_path, method: :delete, class: "nav-item"  do%>
+          <i class="fas fa-sign-out-alt" style="color: #c3c3c3"></i>
+          Sign Out
+        <% end %>
+      </li>
+    </ul>
+  </div>
+
+  <div id="hm-icon">
+    <a href="#" class="menu-trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+  </div>
 </header>

@@ -18,13 +18,14 @@
             <div class="content__fields--flex">
               <div class="content__fields--flex-item-mypage1-user">
                 <div class="content__image--user">
-                  <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250"%>
+                  <%= attachment_image_tag @user, :image, format: 'jpeg' , size: "250x250", class: "user-responsive"%>
                 </div>
                 <div class="content__image--form">
                   <%= f.attachment_field :image %>
                 </div>
               　<div class="content__field--form-mypage">
-                  <%= f.label "--- 自己紹介 ---", class: "content__field--label-mypage" %>
+                  <%= f.label "--- 自己紹介 ---", class: "content__field--label-mypage no-responsive" %>
+                  
                   <%= f.text_area :introduction, class: "form-control content__field--form-introduction" %>
                 </div>
               </div>
@@ -34,28 +35,54 @@
                  <table class="table ">
                  <h3>Profile</h3>
                   <tr>
-                    <th class="content__profile">名前</th>
-                    <td><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
+                    <th class="content__profile"><span class="responsive-form-title">名前</span>
+                      <p class="responsive-form">
+                        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+                      </p>
+                    </th>
+                    <td class="no-responsive-form"><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
                   </tr>
                   <tr>
-                    <th class="content__profile">性別</th>
-                    <td>
+                    <th class="content__profile"><span class="responsive-form-title">性別</span>
+                      <p class="responsive-form">
+                        <%= f.radio_button :sex, false, checked: true %>男性 
+                        <%= f.radio_button :sex, true %>女性
+                      </p>
+                    </th>
+                    <td class="no-responsive-form">
                       <%= f.radio_button :sex, false, checked: true %>男性 
                       <%= f.radio_button :sex, true %>女性
                     </td>
                   </tr>
                   <tr>
-                    <th class="content__profile">年齢</th>
-                    <td><%= f.number_field :age, class: "age", min: 15, max: 100, class: "form-control" %></td>
+                    <th class="content__profile"><span class="responsive-form-title">年齢</span>
+                      <p class="responsive-form">
+                        <%= f.number_field :age, class: "age", min: 15, max: 100, class: "form-control" %>
+                      </p>
+                    </th>
+                    <td class="no-responsive-form"><%= f.number_field :age, class: "age", min: 15, max: 100, class: "form-control" %></td>
                   </tr>
                   <tr>
-                    <th class="content__profile">好きなゲーム</th>
-                    <td><%= f.text_area :favorite_game, class: "form-control",placeholder: "アクション" %></td>
+                    <th class="content__profile"><span class="responsive-form-title">好きなゲーム</span>
+                      <p class="responsive-form">
+                        <%= f.text_area :favorite_game, class: "form-control",placeholder: "アクション" %>
+                      </p>
+                    </th>
+                    <td class="no-responsive-form"><%= f.text_area :favorite_game, class: "form-control",placeholder: "アクション" %></td>
                   </tr>
                   <tr>
-                    <th class="content__profile">SNSリンク</th>
+                    <th class="content__profile"><span class="responsive-form-title">SNSリンク</span>
+                      <p class="responsive-form">
+                        <i class="fab fa-twitter"></i>
+                        <%= f.text_field :twitter, class: "form-control",placeholder: "twitter" %>
+                        <i class="fab fa-instagram"></i>
+                        <%= f.text_field :instagram, class: "form-control",placeholder: "instagram" %>
+                        <i class="fab fa-youtube"></i>
+                        <%= f.text_field :youtube, class: "form-control",placeholder: "youtube" %>
+                      </p>
+                    </th>
                     
-                    <td>
+                    <td class="no-responsive-form">
                       <i class="fab fa-twitter"></i>
                       <%= f.text_field :twitter, class: "form-control",placeholder: "twitter" %>
                       <i class="fab fa-instagram"></i>
