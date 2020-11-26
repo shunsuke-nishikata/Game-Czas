@@ -1,6 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+td.content__fields--matching-users-search-responsive {
+    padding-top: 40px!important;
+}
+td.content__fields--matching-users-search {
+    padding-top: 40px!important;
+}
+
 @media(max-width :425px){
   .body.body__mypage {
     width: 100%!important;
@@ -29,6 +36,12 @@
     padding: 5%;
     border: solid 8px #79a2ce;
  }
+ .sidebar {
+    display: none;
+  }
+   .body.body__signup {
+    width: 100%;
+ }
 }
 
 
@@ -42,10 +55,11 @@
   div#hm-icon {
     display: none!important;
   }
+  
 }
 
 // 768以上ではテーブルを表示させる
-@media(min-width :768px){
+@media(min-width :900px){
   .content__fields--flex-item-mypage1-user.friend {
     display: none;
   }
@@ -82,5 +96,11 @@
   p.responsive-friend-sns {
     margin-bottom: 40px;
   }
-  
+ 
+//   .sidebar {
+//     display: none;
+//   }
+//   .body.body__signup {
+//     width: 100%;
+// }
 }

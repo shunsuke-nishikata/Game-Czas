@@ -14,7 +14,11 @@
     <%if user_signed_in? %>
       <%= render 'layouts/header' %>
     <% else %>
-      <header class="logout_header"></header>
+      <header class="logout_header">
+        <%= link_to root_path do %>
+          <h2 class="header-name-top"><%= image_tag 'game-czas.png' , class: "game-czas-logo-header"%>Game-Czas</h2>
+        <% end %>
+      </header>
     <% end %>
     <% if flash[:notice] %>
       <div class="flash">

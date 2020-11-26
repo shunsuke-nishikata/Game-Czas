@@ -185,3 +185,15 @@ textarea#user_introduction {
     border: solid 8px #79a2ce;
     width: 80%;
 }
+
+@media(max-width :768px){
+  .content__fields--matching-users-search{
+    display:none;
+  }
+}
+
+@media(max-width :425px) {
+  .content__fields--matching-users-search-responsive{
+    display:none;
+  }
+}

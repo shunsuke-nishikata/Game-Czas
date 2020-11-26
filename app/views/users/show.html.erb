@@ -53,59 +53,31 @@
                 <h3>Profile</h3>
                 <tr>
                   <th class="content__profile">名前</br>
-                    <span class="responsive-form"><%= @user.name %></span>
+                    <%= @user.name %>
                   </th>
                   <td class="no-responsive-form"><%= @user.name %></td>
                 </tr>
                 <tr>
                   <th class="content__profile">性別</br>
-                    <span class="responsive-form">
-                      <% if @user.sex == true %>
-                        女性
-                      <% else %>
-                        男性
-                      <% end %>
-                    </span>
-                  </th>
                     <% if @user.sex == true %>
-                      <td class="no-responsive-form">女性</td>
+                      女性
                     <% else %>
-                      <td class="no-responsive-form">男性</td>
+                      男性
                     <% end %>
+                  </th>
                 </tr>
                 <tr>
                   <th class="content__profile">年齢</br>
-                    <span class="responsive-form"><%= @user.age %></span>
+                    <%= @user.age %>
                   </th>
-                  <td class="no-responsive-form"><%= @user.age %></td>
                 </tr>
                 <tr>
                   <th class="content__profile">好きなゲーム</br>
                     <%= @user.favorite_game %>
                   </th>
-                  <td class="no-responsive-form"><%= @user.favorite_game %></td>
                 </tr>
                 <tr>
                   <th class="content__profile">SNSリンク</br>
-                    <span class="responsive-form">
-                      <% if @user.twitter.present? %>
-                        <%= link_to @user.twitter, target: :_blank do %>
-                          <i class="fab fa-twitter"></i>
-                        <% end %>
-                      <% end %>
-                      <% if @user.instagram.present? %>
-                        <%= link_to @user.instagram, target: :_blank do %>
-                          <i class="fab fa-instagram"></i>
-                        <% end %>
-                      <% end %>
-                      <% if @user.youtube.present? %>
-                        <%= link_to @user.youtube, target: :_blank do %>
-                          <i class="fab fa-youtube"></i>
-                        <% end %>
-                      <% end %>
-                    </span>
-                  </th>
-                  <td class="no-responsive-form">
                     <% if @user.twitter.present? %>
                       <%= link_to @user.twitter, target: :_blank do %>
                         <i class="fab fa-twitter"></i>
@@ -121,7 +93,7 @@
                         <i class="fab fa-youtube"></i>
                       <% end %>
                     <% end %>
-                  </td>
+                  </th>
                 </tr>
               </table>
               <% if @user.id == current_user.id %>

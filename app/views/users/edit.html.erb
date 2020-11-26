@@ -25,12 +25,10 @@
                 </div>
               　<div class="content__field--form-mypage">
                   <%= f.label "--- 自己紹介 ---", class: "content__field--label-mypage no-responsive" %>
-                  
                   <%= f.text_area :introduction, class: "form-control content__field--form-introduction" %>
                 </div>
               </div>
-            
-            
+              
               <div class="content__fields--flex-item-mypage2-user">
                  <table class="table ">
                  <h3>Profile</h3>
@@ -40,7 +38,6 @@
                         <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
                       </p>
                     </th>
-                    <td class="no-responsive-form"><%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">性別</span>
@@ -49,10 +46,6 @@
                         <%= f.radio_button :sex, true %>女性
                       </p>
                     </th>
-                    <td class="no-responsive-form">
-                      <%= f.radio_button :sex, false, checked: true %>男性 
-                      <%= f.radio_button :sex, true %>女性
-                    </td>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">年齢</span>
@@ -60,7 +53,6 @@
                         <%= f.number_field :age, class: "age", min: 15, max: 100, class: "form-control" %>
                       </p>
                     </th>
-                    <td class="no-responsive-form"><%= f.number_field :age, class: "age", min: 15, max: 100, class: "form-control" %></td>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">好きなゲーム</span>
@@ -68,7 +60,6 @@
                         <%= f.text_area :favorite_game, class: "form-control",placeholder: "アクション" %>
                       </p>
                     </th>
-                    <td class="no-responsive-form"><%= f.text_area :favorite_game, class: "form-control",placeholder: "アクション" %></td>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">SNSリンク</span>
@@ -81,15 +72,6 @@
                         <%= f.text_field :youtube, class: "form-control",placeholder: "youtube" %>
                       </p>
                     </th>
-                    
-                    <td class="no-responsive-form">
-                      <i class="fab fa-twitter"></i>
-                      <%= f.text_field :twitter, class: "form-control",placeholder: "twitter" %>
-                      <i class="fab fa-instagram"></i>
-                      <%= f.text_field :instagram, class: "form-control",placeholder: "instagram" %>
-                      <i class="fab fa-youtube"></i>
-                      <%= f.text_field :youtube, class: "form-control",placeholder: "youtube" %>
-                    </td>
                   </tr>
                 </table>
                 <div class="content__field--button">

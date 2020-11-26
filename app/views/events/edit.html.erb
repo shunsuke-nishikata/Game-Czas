@@ -25,75 +25,41 @@
                   <%= f.text_area :game_location, class: "form-control content__field--form-game_location" %>
                 </div>
               </div>
-            
-            
               <div class="content__fields--flex-item-mypage2-user">
                  <table class="table ">
                  <h3>My Event</h3>
                  <p>イベントを作ろう</p>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">イベント名</span>
-                      <p class="responsive-form">
-                        <%= f.text_field :event_name, autofocus: true, autocomplete: "name", class: "form-control" %>
-                      </p>
+                      <%= f.text_field :event_name, autofocus: true, autocomplete: "event_name", class: "form-control" %>
                     </th>
-                    <td class="no-responsive-form"><%= f.text_field :event_name, autofocus: true, autocomplete: "name", class: "form-control" %></td>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">開催予定</span>
-                      <p class="responsive-form">
-                        <%= f.radio_button :is_online, false, checked: true %>オフライン
-                        <%= f.radio_button :is_online, true %>オンライン
-                      </p>
-                    </th>
-                    <td class="no-responsive-form">
                       <%= f.radio_button :is_online, false, checked: true %>オフライン
                       <%= f.radio_button :is_online, true %>オンライン
-                    </td>
+                    </th>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">イベント日</span>
-                      <p class="responsive-form">
-                        <span class="event__area--supplement">＊&emsp;開催日</span></br>
-                        <%= f.date_field :event_date, autocomplete: "event_date", class: "form-control" %>
-                      </p>
-                    </th>
-                    <td class="no-responsive-form">
                       <span class="event__area--supplement">＊&emsp;開催日</span></br>
                       <%= f.date_field :event_date, autocomplete: "event_date", class: "form-control" %>
-                    </td>
+                    </th>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">開始時間</span>
-                      <p class="responsive-form">
-                        <%= f.time_field :starting_time, autocomplete: "start_time", class: "form-control event-new" %>
-                      </p>
-                    </th>
-                    <td class="no-responsive-form">
-                      <span class="event__area--supplement">＊&emsp;開始時間</span></br>
                       <%= f.time_field :starting_time, autocomplete: "start_time", class: "form-control event-new" %>
-                    </td>
+                    </th>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">終了時間</span>
-                      <p class="responsive-form">
-                        <%= f.time_field :ending_time, autocomplete: "finish_time", class: "form-control event-new" %>
-                      </p>
-                    </th>
-                    <td class="no-responsive-form">
-                      <span class="event__area--supplement">＊&emsp;終了時間</span></br>
                       <%= f.time_field :ending_time, autocomplete: "finish_time", class: "form-control event-new" %>
-                    </td>
+                    </th>
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">料金</span>
-                      <p class="responsive-form">
-                        <%= f.text_field :price, autocomplete: "place", class: "form-control event-new", placeholder: "1000" %>円
-                      </p>
+                      <%= f.text_field :price, autocomplete: "place", class: "form-control event-new", value: 0 %>円
                     </th>
-                    <td class="no-responsive-form">
-                     <%= f.text_field :price, autocomplete: "place", class: "form-control event-new", placeholder: "1000" %>円
-                    </td>
                   </tr>
                 </table>
                 <div class="content__field--button">

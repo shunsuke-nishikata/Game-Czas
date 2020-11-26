@@ -20,12 +20,11 @@
                     <tr>
                       <th>作成者</th>
                       <th>イベント詳細</th>
-                      <th>料金</th>
-                      <th>イベント名</th>
-                      <th>日にち</th>
-                      <th>開始</th>
-                      <th>性別</th>
-                      <th>SNS</th>
+                      <th class="content__fields--matching-users-search-responsive">イベント名</th>
+                      <th class="content__fields--matching-users-search">日にち</th>
+                      <th class="content__fields--matching-users-search">開始</th>
+                      <th class="content__fields--matching-users-search">性別</th>
+                      <th class="content__fields--matching-users-search">SNS</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -38,18 +37,18 @@
                       <td class="content__fields--matching-users">
                         <%= link_to "ｲﾍﾞﾝﾄ詳細", event_path(event.id), class: "btn btn-success" %>
                       </td>
-                      <td class="content__fields--matching-users"><%= event.price %></td>
-                      <td class="content__fields--matching-users"><%= event.event_name %></td>
-                      <td class="content__fields--matching-users"><%= event.event_date.to_s(:date_jp)%></td>
-                      <td class="content__fields--matching-users">
+                      
+                      <td class="content__fields--matching-users-search-responsive"><%= event.event_name %></td>
+                      <td class="content__fields--matching-users-search"><%= event.event_date.to_s(:date_jp)%></td>
+                      <td class="content__fields--matching-users-search">
                         <%= event.starting_time.to_s(:time) %> ~ 
                       </td>
                       <% if event.user.sex == true %>
-                        <td class="content__fields--matching-users">女性</td>
+                        <td class="content__fields--matching-users-search">女性</td>
                       <% else %>
-                        <td class="content__fields--matching-users">男性</td>
+                        <td class="content__fields--matching-users-search">男性</td>
                       <% end %>
-                      <td class="content__fields--matching-users">
+                      <td class="content__fields--matching-users-search">
                         <% if event.user.twitter.present? %>
                           <%= link_to event.user.twitter, target: :_blank do %>
                             <i class="fab fa-twitter"></i>

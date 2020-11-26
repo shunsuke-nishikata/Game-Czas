@@ -40,7 +40,10 @@
                   
                   <div class="content__field--follow">
                     <p class="responsive-follow-count">follow <%= friend.followings.count %>人 follower<%= friend.followers.count %>人</p>
-                    <%= render partial: 'follow_button', locals: {user: friend} %>
+                    <div id="matching_follow_button<%= friend.id %>">
+                      <%= render partial: 'follow_matching', locals: {friend: friend} %>
+                      <%= link_to "Message", room_path(friend.id), class: "btn btn-warning" %>
+                    </div>
                   </div>
                   
                   <table class="table table-bordered ">
