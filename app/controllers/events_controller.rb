@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.where.not(user_id: current_user.id)
     @new_events = Event.page(params[:page]).per(6)
+    # @new_events = newevents.where
     # @new_events  = Event.all.shuffle.take(8)
 
     from = Time.current.beginning_of_day
