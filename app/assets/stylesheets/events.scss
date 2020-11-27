@@ -2,6 +2,11 @@
     background: white;
     border: solid 8px #79a2ce;
 }
+td.event-location {
+    white-space: pre-wrap;
+    text-align: left;
+    word-break: break-all;
+}
 p.show-text {
     margin-top: 5px;
     margin-bottom: 0;

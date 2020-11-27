@@ -15,6 +15,12 @@ span.sns-form-icon {
     display: block;
 }
 
+td.user-introduction {
+    white-space: pre-wrap;
+    text-align: left;
+    word-break: break-all;
+}
+
 @media(max-width :425px){
   .body.body__mypage {
     width: 100%!important;
