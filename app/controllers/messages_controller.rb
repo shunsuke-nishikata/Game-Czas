@@ -55,10 +55,10 @@ class MessagesController < ApplicationController
     end
     
     # 一番最新の通知
-    latest_notification = current_user.passive_notifications.first
-    if latest_notification.action == "message"
-      @notification = latest_notification
-    end
+    # latest_notification = current_user.passive_notifications.first
+    # if latest_notification.action == "message"
+    #   @notification = latest_notification
+    # end
     
   end
 
