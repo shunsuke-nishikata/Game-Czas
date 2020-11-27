@@ -43,13 +43,13 @@ class UsersController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
-# かんたんログインユーザーの編集向こう
-  def check_guest
-    if current_user.email == 'guest@example.com'
-      flash[:notice] = "ゲストユーザーのため編集できません。"
-      redirect_to user_path(current_user)
-    end
-  end
+# かんたんログインユーザーの編集を無効
+  # def check_guest
+  #   if current_user.email == 'guest@example.com'
+  #     flash[:notice] = "ゲストユーザーのため編集できません。"
+  #     redirect_to user_path(current_user)
+  #   end
+  # end
 
   def user_params
     params.require(:user).permit(:image, :name, :sex, :age, :favorite_game, :introduction, :twitter, :instagram, :youtube)
