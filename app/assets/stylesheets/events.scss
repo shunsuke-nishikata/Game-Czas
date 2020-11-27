@@ -2,8 +2,12 @@
     background: white;
     border: solid 8px #79a2ce;
 }
-
-
+p.show-text {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 18px;
+    color: black;
+}
 .event__area {
     background: white;
     padding: 5%;
@@ -26,6 +30,24 @@
 span.responsive-form-title {
     display: block;
     margin-bottom: 5px;
+}
+
+th.content__profile {
+    color: gray;
+}
+
+.event-explanation {
+  color: gray;
+  font-size: 12px;
+}
+.show-title{
+  border-radius: 30px;
+  color: white;
+  background: #5790ce;
+}
+
+span.en {
+    padding-left: 5px;
 }
 
 // 767以上

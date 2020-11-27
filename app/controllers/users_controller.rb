@@ -26,6 +26,8 @@ class UsersController < ApplicationController
 
   def matching
     @friends = current_user.matching
+    # @friends = User.where(id: reverse_of_relationships.select(:followed_id)).where(id: relationships.select(:follower_id))
+    # @friends = User.where(id: current_user.id).matching.page(params[:page]).per(6)
   end
 
   private
@@ -34,16 +36,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+# URL直打ちによる遷移の限定
   def ensure_correct_user
     @user = User.find(params[:id])
     if current_user.id != @user.id
       redirect_back(fallback_location: root_path)
     end
   end
-
+# かんたんログインユーザーの編集向こう
   def check_guest
     if current_user.email == 'guest@example.com'
-      flash[:notice] = "ゲストユーザーのため編集できません"
+      flash[:notice] = "ゲストユーザーのため編集できません。"
       redirect_to user_path(current_user)
     end
   end

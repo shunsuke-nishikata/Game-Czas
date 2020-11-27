@@ -31,7 +31,7 @@
               
               <div class="content__fields--flex-item-mypage2-user">
                  <table class="table ">
-                 <h3>Profile</h3>
+                 <h3 class="show-title">Profile</h3>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">名前</span>
                       <p class="responsive-form">
@@ -63,14 +63,14 @@
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">SNSリンク</span>
-                      <p class="responsive-form">
-                        <i class="fab fa-twitter"></i>
-                        <%= f.text_field :twitter, class: "form-control",placeholder: "twitter" %>
-                        <i class="fab fa-instagram"></i>
-                        <%= f.text_field :instagram, class: "form-control",placeholder: "instagram" %>
-                        <i class="fab fa-youtube"></i>
-                        <%= f.text_field :youtube, class: "form-control",placeholder: "youtube" %>
-                      </p>
+                      <!--<p class="responsive-form">-->
+                        <span class="sns-form-icon"><i class="fab fa-twitter"></i></span>
+                        <%= f.text_field :twitter, class: "form-control sns",placeholder: "twitter" %>
+                        <span class="sns-form-icon"><i class="fab fa-instagram"></i></span>
+                        <%= f.text_field :instagram, class: "form-control sns",placeholder: "instagram" %>
+                        <span class="sns-form-icon"><i class="fab fa-youtube"></i></span>
+                        <%= f.text_field :youtube, class: "form-control sns",placeholder: "youtube" %>
+                      <!--</p>-->
                     </th>
                   </tr>
                 </table>

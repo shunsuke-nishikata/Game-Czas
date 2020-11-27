@@ -6,7 +6,8 @@ class Users::SessionsController < Devise::SessionsController
   def new_guest
     user = User.guest
     sign_in user
-    redirect_to events_path, notice: 'ゲストユーザーとしてログインしました。'
+    flash[:notice] = "ゲストユーザーとしてログインしました！"
+    redirect_to events_path
   end
   # GET /resource/sign_in
   # def new

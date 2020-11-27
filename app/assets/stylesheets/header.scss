@@ -35,6 +35,8 @@ h2.header-name {
     height:50px;
     background:#303E4D;
     border-bottom: 1px solid white;
+    position: fixed;
+    z-index: 10;
 }
 
 h2.header-name-top {

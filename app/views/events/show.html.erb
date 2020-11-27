@@ -27,13 +27,15 @@
                 <div class="content__image--user">
                   <%= attachment_image_tag @event.user, :image, format: 'jpeg' , size: "250x250", class: "user-responsive" %>
                 </div>
-                <span id="event__area--likes_<%= @event.id %>">
-                  <%= render partial: 'likes/like', locals: {event: @event} %>
-                </span>
-                <span>
-                  <i class="far fa-comments" style="color: black;"></i>
-                  <%= @event.event_comments.count %>
-                </span>
+                <div class="user-notice">
+                  <span id="event__area--likes_<%= @event.id %>">
+                    <%= render partial: 'likes/like', locals: {event: @event} %>
+                  </span>
+                  <span>
+                    <i class="far fa-comments" style="color: black;"></i>
+                    <%= @event.event_comments.count %>
+                  </span>
+                </div>
               　<table class="table table-bordered ">
                   <tr>
                     <th class="content__profile">--- イベントメモ ---</th>
@@ -46,40 +48,46 @@
               <div class="content__fields--flex-item-mypage2-user">
                 <table class="table ">
                   <% if @event.user == current_user %>
-                   <h3>My Event</h3>
-                   <p>イベント詳細</p>
+                   <h3 class="show-title">My Event</h3>
+                   <p class="event-explanation">イベント詳細</p>
                   <% else %>
-                    <h3>Event</h3>
-                    <p>イベント詳細</p>
+                    <h3 class="show-title">Event</h3>
+                    <p class="event-explanation">イベント詳細</p>
                   <% end %>
                   <tr>
                     <th class="content__profile">イベント名</br>
-                      <%= @event.event_name %>
+                      <p class="show-text"><%= @event.event_name %></p>
                     </th>
                   <tr>
                     <th class="content__profile">開催予定</br>
-                      <% if @event.is_online == true %>
-                        オンライン開催
-                      <% else %>
-                        オフライン開催
-                      <% end %>
+                      <p class="show-text">
+                        <% if @event.is_online == true %>
+                          オンライン開催
+                        <% else %>
+                          オフライン開催
+                        <% end %>
+                      </p>
                     </th>
                   </tr>
                   <tr>
                     <th class="content__profile">イベント日</br>
+                    <p class="show-text">
                       <%= @event.event_date.to_s(:date_jp) %>
+                    </p>
                     </th>
                   </tr>
                   <tr>
                     <th class="content__profile">開催時間〜終了時間</br>
-                      <%= @event.starting_time.to_s(:time)  %>
-                      &emsp;~ &emsp;
-                      <%= @event.ending_time.to_s(:time) %>
+                      <p class="show-text">
+                        <%= @event.starting_time.to_s(:time)  %>
+                        &emsp;~ &emsp;
+                        <%= @event.ending_time.to_s(:time) %>
+                      </p>
                     </th>
                   </tr>
                   <tr>
                     <th class="content__profile">料金</br>
-                      <%= @event.price %>円
+                      <p class="show-text"><%= @event.price %>円</p>
                     </th>
                   </tr>
                 </table>

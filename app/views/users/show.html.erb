@@ -50,30 +50,31 @@
             </div>
             <div class="content__fields--flex-item-mypage2-user">
               <table class="table">
-                <h3>Profile</h3>
+                <h3 class="show-title">Profile</h3>
                 <tr>
                   <th class="content__profile">名前</br>
-                    <%= @user.name %>
+                    <p class="show-text"><%= @user.name %></p>
                   </th>
-                  <td class="no-responsive-form"><%= @user.name %></td>
                 </tr>
                 <tr>
                   <th class="content__profile">性別</br>
-                    <% if @user.sex == true %>
-                      女性
-                    <% else %>
-                      男性
-                    <% end %>
+                    <p class="show-text">
+                      <% if @user.sex == true %>
+                        女性
+                      <% else %>
+                        男性
+                      <% end %>
+                    </p>
                   </th>
                 </tr>
                 <tr>
                   <th class="content__profile">年齢</br>
-                    <%= @user.age %>
+                    <p class="show-text"><%= @user.age %></p>
                   </th>
                 </tr>
                 <tr>
                   <th class="content__profile">好きなゲーム</br>
-                    <%= @user.favorite_game %>
+                    <p class="show-text"><%= @user.favorite_game %></p>
                   </th>
                 </tr>
                 <tr>

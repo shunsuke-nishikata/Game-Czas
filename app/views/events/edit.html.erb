@@ -27,8 +27,8 @@
               </div>
               <div class="content__fields--flex-item-mypage2-user">
                  <table class="table ">
-                 <h3>My Event</h3>
-                 <p>イベントを作ろう</p>
+                 <h3 class="show-title">My Event</h3>
+                 <p class="event-explanation">イベントを作ろう</p>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">イベント名</span>
                       <%= f.text_field :event_name, autofocus: true, autocomplete: "event_name", class: "form-control" %>
@@ -58,7 +58,7 @@
                   </tr>
                   <tr>
                     <th class="content__profile"><span class="responsive-form-title">料金</span>
-                      <%= f.text_field :price, autocomplete: "place", class: "form-control event-new", value: 0 %>円
+                      <%= f.text_field :price, autocomplete: "place", class: "form-control event-new", value: 0 %><span class="en">円</span>
                     </th>
                   </tr>
                 </table>
