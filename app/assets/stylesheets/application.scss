@@ -22,11 +22,11 @@
 
 @font-face{
     font-family: 'LogoTypeGothic';
-    src: font-url('/assets/07LogoTypeGothic7.ttf') format("truetype"); 
+    src: asset_url('/assets/07LogoTypeGothic7.ttf') format("truetype"); 
 }
 
 * {
-    font-family:LogoTypeGothic;
+  font-family:LogoTypeGothic;
 }
 
 // 写真のCSS

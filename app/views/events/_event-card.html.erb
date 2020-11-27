@@ -10,7 +10,7 @@
         <%= event.event_date.to_s(:date_jp) %></br> 
         <i class="far fa-clock"></i>
         <%= event.starting_time.to_s(:time) %>
-        <span>~</span>
+        <span>~&nbsp;</span>
         <%= event.ending_time.to_s(:time) %></br>
         <%= link_to event_path(event.id) do %>
           <i class="far fa-comments" style="color: black;"></i>
