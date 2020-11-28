@@ -27,13 +27,14 @@ class Event < ApplicationRecord
   end
 
   # カレンダー使用のためのメソッド
+  # start_timeで命名しないと処理が適応されない
   def start_time
     event_date
   end
   
   # selfはevent
   # 検索フォームのメソッド
-  search_wordはフォームに入力された文字列
+  # search_wordはフォームに入力された文字列
   def self.search_for(search_word)
     if search_word
       # SQLでLIKE句を使用すると、対象の列(カラム)に対して文字列検索を行うことができる
