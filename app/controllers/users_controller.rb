@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :check_guest, only: [:update, :edit]
+  # before_action :check_guest, only: [:update, :edit]
 
   def show
   end
@@ -44,12 +44,12 @@ class UsersController < ApplicationController
     end
   end
 # かんたんログインユーザーの編集を無効
-  def check_guest
-    if current_user.email == 'guest@example.com'
-      flash[:notice] = "ゲストユーザーのため編集できません。"
-      redirect_to user_path(current_user)
-    end
-  end
+  # def check_guest
+  #   if current_user.email == 'guest@example.com'
+  #     flash[:notice] = "ゲストユーザーのため編集できません。"
+  #     redirect_to user_path(current_user)
+  #   end
+  # end
 
   def user_params
     params.require(:user).permit(:image, :name, :sex, :age, :favorite_game, :introduction, :twitter, :instagram, :youtube)
