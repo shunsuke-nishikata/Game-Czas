@@ -43,25 +43,33 @@ class User < ApplicationRecord
 
   def follow(user_id)
     relationship = relationships.new(followed_id: user_id)
-    relationship.save!
-    self
+    relationship.save
+    # self
   end
 
   def unfollow(user_id)
     relationship = Relationship.find_by(followed_id: user_id)
     relationship.destroy
   end
-
+  
+  # includeは引数で指定した要素が、配列中に含まれているか判定するメソッド
+  # current_userを渡してフォローしているかを確認をする
   def following?(user)
     followings.include?(user)
   end
-
+  
+  # マッチング状態のユーザーの取得、参照元
+  # has_many :followers, through: :reverse_of_relationships, source: :follower
+  # has_many :followings, through: :relationships, source: :followed
   def matching
     followings & followers
   end
-
+  
+  # selfはuser
+  # search_wordはフォームに入力された文字列
   def self.search_for(search_word)
     if search_word
+      # SQLでLIKE句を使用すると、対象の列(カラム)に対して文字列検索を行うことができる
       User.where('name LIKE ?', '%' + search_word + '%')
     else
       @search_users = User.where.not(id: current_user.id)
@@ -70,6 +78,8 @@ class User < ApplicationRecord
   end
 
   def self.guest
+    # 条件を指定して初めの1件を取得、1件もなければ作成、emailがguest@example.comのユーザー
+    # ついでに名前とパスワードも作成
     find_or_create_by!(email: 'guest@example.com') do |user|
       # パスワードをランダム生成
       user.password = SecureRandom.urlsafe_base64
@@ -89,6 +99,7 @@ class User < ApplicationRecord
 
   # フォロー用の通知機能
   def create_notification_follow(current_user)
+    # SQLインジェクションの文字列での指定、.blank?はnilまたは空のオブジェクトを判定する
     temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
     if temp.blank?
       notification = current_user.active_notifications.new(

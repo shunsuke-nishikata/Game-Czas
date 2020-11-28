@@ -36,13 +36,11 @@ class MessagesController < ApplicationController
       #   end
       #   binding.pry
       # end
-      
     else
       flash[:notice] = "メッセージを入力してください"
       redirect_back(fallback_location: root_path)
     end
     # @message.create_notification_message(current_user, @message.id, room.id, visited_id)
-
     # redirect_back(fallback_location: root_path)
   end
 
