@@ -84,15 +84,6 @@ class User < ApplicationRecord
       # パスワードをランダム生成
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲストユーザー"
-      # user.image_id = ""
-      # user.sex = true
-      # user.introduction = "ゲームが出来る人を探すために登録しました！よろしくお願い致します。"
-      # user.favorite_game = "アクション系"
-      # user.age = 18
-      # user.twitter = "#"
-      # user.instagram = "#"
-      # user.youtube = "#"
-      
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end
   end

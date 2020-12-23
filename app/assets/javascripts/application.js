@@ -18,6 +18,7 @@
 //= require_tree .
 
 
+// ハンバーガーメニュー
 $(function(){
   $('.menu-trigger').on('click',function(event){
     $(this).toggleClass('active');
@@ -25,3 +26,11 @@ $(function(){
     event.preventDefault();
   })
 })
+
+
+// (() =>{
+  
+  
+
+  
+// })();
